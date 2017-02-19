@@ -13,6 +13,12 @@ uid = "5"
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 #app.config['CORS_HEADERS'] = 'Content-Type'
 
+@app.route('/')
+@app.route('/index')
+def index():
+    return "Hello, World!"
+
+
 #Get movies for Versus
 @app.route('/moviedb/api/v1.0/movies', methods=['GET'])
 @cross_origin()
