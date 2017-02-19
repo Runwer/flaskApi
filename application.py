@@ -1,3 +1,8 @@
 #!flask/bin/python
 from app import app
-app.run(debug=True, threaded=True)
+
+application = app
+
+if __name__ == '__main__':
+    app.run(debug=True, threaded=True)
+
