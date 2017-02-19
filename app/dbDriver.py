@@ -1,9 +1,15 @@
 from pymongo import MongoClient
 from jsonencoder import JSONEncoder
 
-client = MongoClient('localhost', 27017)
+uri = 'mongodb://runwer:REM040160rem@ds155509.mlab.com:55509/fliqpick'
 
-db = client.moviesdb
+client = MongoClient(uri,
+                     connectTimeoutMS=30000,
+                     socketTimeoutMS=None,
+                     socketKeepAlive=True)
+
+db = client.get_default_database()
+
 
 
 ## functions that mess with moviesCol
