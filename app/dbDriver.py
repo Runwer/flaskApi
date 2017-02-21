@@ -1,15 +1,17 @@
 from pymongo import MongoClient
 from jsonencoder import JSONEncoder
 
-uri = 'mongodb://runwer:REM040160rem@ds155509.mlab.com:55509/fliqpick'
+#uri = 'mongodb://runwer:REM040160rem@ds155509.mlab.com:55509/fliqpick'
+uri = ('localhost')
 
-client = MongoClient(uri,
-                     connectTimeoutMS=30000,
-                     socketTimeoutMS=None,
-                     socketKeepAlive=True)
 
-db = client.get_default_database()
+client = MongoClient(uri)#prod,
+                     #connectTimeoutMS=30000,
+                     #socketTimeoutMS=None,
+                     #socketKeepAlive=True)
 
+# producttion: db = client.get_default_database()
+db = client.moviesdb
 
 
 ## functions that mess with moviesCol
@@ -64,7 +66,7 @@ def pctEdge(movid1, movid2):
         pctout = [out1, 100-out1]
         return pctout
     else:
-        return [movid1,movid2]
+        return [50,50]
 
 ### functions regarding the notSeen Collection
 def notSeen(uid, movid):
