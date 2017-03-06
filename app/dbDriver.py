@@ -10,7 +10,7 @@ client = MongoClient(uri)#prod,
                      #socketTimeoutMS=None,
                      #socketKeepAlive=True)
 
-# producttion: db = client.get_default_database()
+#db = client.get_default_database()
 db = client.moviesdb
 
 
@@ -24,6 +24,7 @@ def findMovBattleRand(notlist):
     out = []
     for m in movs:
         out.append(m)
+    # return JSONEncoder().encode([m for m in movs])
     return JSONEncoder().encode(out)
 
 def findMovBattleVs(vs):
@@ -35,6 +36,7 @@ def findMovBattleVs(vs):
     out = []
     for m in movs:
         out.append(m)
+    # return JSONEncoder().encode([m for m in movs])
     return JSONEncoder().encode(out)
 
 def findMov(id):
@@ -76,6 +78,7 @@ def getNotSeen(uid):
     query = {"user": uid}
     projection = {"_id": 0, "movieID": 1}
     outq = db.notSeenCol.find(query, projection)
+    # outlist = [q["movieID"] for q in outq]
     outlist = []
     for q in outq:
         outlist.append(q["movieID"])

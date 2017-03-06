@@ -23,7 +23,7 @@ def index():
 @app.route('/moviedb/api/v1.0/movies', methods=['GET'])
 @cross_origin()
 def moviedb():
-    moviecount = int(request.args.get('count'))
+    moviecount = request.args.get('count', type=int)
     if moviecount == 1:
         #Consider doing a double call, then see if id of first == id of vsmovie
         mov = getNotSeen(uid)
