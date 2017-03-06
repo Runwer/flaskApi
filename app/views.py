@@ -1,7 +1,6 @@
 #!flask/bin/python
 from app import app
-from flask import Flask, jsonify, request, abort
-from flask import render_template, make_response
+from flask import Flask, jsonify, request, abort, session
 from flask_cors import CORS, cross_origin
 from Pagerank import pagerank
 from functions import fp_cookie
@@ -26,12 +25,12 @@ def moviedb():
     moviecount = request.args.get('count', type=int)
     if moviecount == 1:
         #Consider doing a double call, then see if id of first == id of vsmovie
-        mov = getNotSeen(uid)
+        mov = getNotSeen(session['user'])
         mov.append(request.args.get('vsmovie'))
-        notSeen(uid, request.args.get('dump'))
+        notSeen(session['user'], request.args.get('dump'))
         return findMovBattleVs(mov)
     if moviecount == 2:
-        return findMovBattleRand(getNotSeen(uid))
+        return findMovBattleRand(getNotSeen(session['user']))
 
 @app.route('/moviedb/api/v1.0/edge', methods=['POST'])
 @cross_origin()
@@ -45,7 +44,7 @@ def create_task():
 @app.route('/moviedb/api/v1.0/toplist', methods=['GET'])
 @cross_origin()
 def toplist():
-    edges = findEdge(uid)
+    edges = findEdge(session['user'])
     if len(edges) != 0:
         tlist = pagerank(edges)[0]
         sortedtlist = sorted(tlist.items(), key=operator.itemgetter(1), reverse=True)
