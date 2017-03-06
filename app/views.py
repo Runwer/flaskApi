@@ -1,14 +1,15 @@
 #!flask/bin/python
 from app import app
 from flask import Flask, jsonify, request, abort
-import random
+from flask import render_template, make_response
 from flask_cors import CORS, cross_origin
 from Pagerank import pagerank
+from functions import fp_cookie
 import operator
 from dbDriver import findMovBattleRand, findMovBattleVs, findMov, insertEdge, findEdge, pctEdge, notSeen, getNotSeen
+import uuid
 
-uid = "5"
-
+#Needs to set this in a template used by all frontend views
 
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 #app.config['CORS_HEADERS'] = 'Content-Type'
@@ -16,14 +17,13 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, World!"
-
+    return fp_cookie('/index.html')
 
 #Get movies for Versus
 @app.route('/moviedb/api/v1.0/movies', methods=['GET'])
 @cross_origin()
 def moviedb():
-    moviecount = int(request.args.get('count'))
+    moviecount = request.args.get('count', type=int)
     if moviecount == 1:
         #Consider doing a double call, then see if id of first == id of vsmovie
         mov = getNotSeen(uid)

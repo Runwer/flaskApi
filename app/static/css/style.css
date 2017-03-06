@@ -1,0 +1,796 @@
+/*
+Theme Name: Fliqpick
+Author: Deb D Pujohn
+Author URI: http://www.themezwarrior.com
+
+
+*/
+
+
+
+
+/********new great things created by me****************/
+
+html{
+	width:100%;
+	height:auto;
+}
+
+* {
+	margin:0;
+	padding:0;
+}
+
+* {
+-webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:focus{
+	outline:none !important;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	line-height:1.6em;
+	text-align: left;
+	margin: 0px auto !important;
+	overflow-x: hidden;
+	color: #7b7b7b;
+	-webkit-font-smoothing: antialiased;
+	width:100%;
+	height: auto;
+	background:url('../img/totalbg.jpg');
+	background-position: top center;
+	background-size:cover;
+	
+	
+}
+img{
+	max-width:100%;
+	border:none;
+	height:auto;
+	display:inline-block;
+}
+
+a{
+	text-decoration:none !important;
+}
+a,
+a:hover{
+	text-decoration:none !important;
+	-moz-transition: all 0.2s ease 0s;
+	-webkit-transition: all 0.2s ease 0s;
+	-ms-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+a:focus{
+	outline:none !important;
+}
+a:active{
+	text-decoration:none !important;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+select:focus{
+	outline:none !important;
+
+}
+
+ul{
+	padding:0px;
+	margin:0px;
+	list-style:none;
+	
+}
+
+h1{
+	font-size:40px;
+}
+
+h2{
+	font-size:36px;
+}
+
+h3{
+	font-size:28px;
+}
+
+h4{
+	font-size:24px;
+}
+
+h5{
+	font-size:20px;
+}
+
+h6{
+	font-size:16px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin:10px 0px;
+}
+
+
+p{
+	margin-top:0px;
+}
+
+/************************/
+
+
+.marginRow{
+	margin-top:30px;
+}
+
+.section_header{
+	display: none;
+}
+
+/************main css styling here*************/
+
+
+.headertop{
+	background: #222;
+	padding:20px 0px;
+}
+.welcomemessage{
+	text-align: left;
+	color: #7b7b7b;
+	text-transform: capitalize;
+}
+.htoprightmenu{}
+.htoprightmenu ul{
+	text-align: right;
+}
+.htoprightmenu ul li{
+	display: inline;
+	margin-left:5px;
+}
+.htoprightmenu ul li a{
+	display: inline-block;
+	font-size:16px;
+	color:#fff;
+}
+.htoprightmenu ul li a:hover{}
+.{}
+.searchbox {
+	background: #2b2b2b;
+	padding: 23px;
+	cursor: pointer;
+}
+.searchbox i{
+	color: #d6b161;
+	font-size:16px;
+	cursor: pointer;
+}
+.searchbox input {
+	display: none;
+	border: none;
+	padding: 2px 9px;
+	background: #000;
+}
+.headerlogoarea{
+	padding: 25px 0px;
+}
+.logo{}
+.logo a{}
+.logo a img{}
+.logomiddletext{}
+.logomiddletext h3{
+	text-align: center;
+	text-transform: capitalize;
+}
+.logomiddletext h3 span{
+	color: #a0ce4e;
+	font-weight: 600;
+	display: inline-block;
+}
+.fixedfb{
+	width: 100%;
+    background: rgba(0,0,0,0.6);
+    display: inline-block;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    z-index: 999;
+    top: 0;
+    padding: 10px 0px;
+}
+.socialicon{}
+.socialicon ul{
+	text-align: right;
+}
+.socialicon ul li{
+	display: inline;
+}
+.socialicon ul li a{
+	display: inline-block;
+}
+.socialicon ul li a img{
+	display: inline-block;
+}
+
+
+.mainavigation{
+	margin:0px;
+	border:none;
+	border-radius: 0px;
+	background: none!important;
+	
+}
+
+.maincontainer{
+	background: rgba(72,89,78,1);
+	padding: 0px;
+}
+.maincollapse{
+	padding-left:0px;
+}
+.maincollapse ul{}
+.maincollapse ul li{
+	margin-right:10px;
+}
+.maincollapse ul li a{
+	color: #fefefe!important;
+	font-size:18px;
+	text-transform: uppercase;
+}
+.maincollapse ul li a:hover{
+	border-bottom: 5px solid #a0ce4e;
+	background: #617936!important;
+	color: #fefefe!important;
+}
+.maincollapse ul li a:focus{
+	border-bottom: 5px solid #a0ce4e;
+	background: rgba(72,89,78,1)!important;
+	color: #fefefe!important;
+}
+.maincollapse ul li a:active{
+	border-bottom: 5px solid #a0ce4e;
+	background: rgba(72,89,78,1)!important;
+	color: #fefefe!important;
+}
+.maincollapse ul li.active a{
+	border-bottom: 5px solid #a0ce4e;
+	background: rgba(72,89,78,1)!important;
+	color: #fefefe!important;
+}
+.{}
+.rightnavbar{}
+.rightnavbar li{
+	margin-right:0px!important;
+}
+.rightnavbar li a{
+	background: #8db34b!important;
+	color: #fff !important;
+	font-size: 18px !important;
+	text-transform: uppercase;
+	padding: 17px 15px!important;
+}
+
+.rightnavbar li a:focus,
+.rightnavbar li a:active,
+.rightnavbar li a:hover{
+	background: #8db34b!important;
+	border-bottom: 0px!important;
+}
+.rightnavbar li.active a{
+	border-bottom: 0px!important;
+	background: #8db34b!important;
+}
+
+
+.tabletopmovies {
+	min-height: .01%;
+	overflow-x: inherit;
+}
+/**********intersteller****************/
+
+.bladerunnerarea,
+.interstellerarea{
+	padding: 30px 0px;
+}
+.interstellerarea h4{
+	color: #fff;
+	font-weight: 600;
+	text-transform: capitalize;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.interstellerarea h4 img{
+	position: relative;
+    top: -2px;
+    margin-left: 5px;
+}
+.interstellerarea ul{
+	text-align: left;
+}
+.interstellerarea ul li{
+	display: inline;
+	margin-right: 15px;
+}
+
+.interstellerarea ul li::last-child{
+	margin-right:0px!important;
+}
+.interstellerarea ul li a{
+	display: inline-block;
+	font-size:18px;
+	color:#fff;
+	text-transform: capitalize;
+}
+.picmovie{
+ border-radius: 4px;
+  background-color: rgb( 92, 184, 92 );
+  box-shadow: 0px 2.598px 0px 0px rgb( 52, 145, 52 );
+	padding: 15px 20px;
+}
+.seenmovie{
+  border-radius: 4px;
+  background-color: rgb( 240, 173, 78 );
+  box-shadow: 0px 2.598px 0px 0px rgb( 187, 126, 40 );
+	padding: 15px 20px;
+}
+.infoimage{
+	border-radius: 4px;
+  background-color: rgb( 68, 73, 66 );
+  box-shadow: 0px 2.598px 0px 0px rgb( 42, 44, 38 );
+	padding: 15px 20px;
+	    margin-right: 0 !important;
+	    cursor: pointer;
+}
+
+.infoimage img{
+	position: relative;
+    top: 4px;
+}
+
+.posterimage, .posterimage2{
+	background: url(../img/photo-frame.jpg) no-repeat top center;
+    padding: 15px;
+    background-size: cover;
+    width: 442px;
+    height: 603px;
+}
+
+.posterimage img, .posterimage2 img{
+	margin: auto;
+    position: relative;
+    top: 30px;
+}
+
+
+.posterimage{}
+.smallmovieimage{}
+.smallone{}
+.smallone img{
+	margin:0px auto;
+	display: block;
+}
+.ratings {
+	margin: 0px auto;
+	text-align: center;
+	display: table;
+	margin: 14px auto;
+}
+.ratings span{
+	display: block;
+}
+.roundpercent{
+	border:1px solid #fff;
+	border-radius: 50%;
+	width:40px;
+	height:40px;
+	padding: 6px;
+	color:#fff;
+}
+.ratinstext{
+	color:#fff;
+	text-transform: uppercase;
+	position: relative;
+	margin:15px 0px;
+	
+}
+.ratinstext img {
+	position: absolute;
+	top: -41px;
+	right: -56px;
+}
+
+
+footer{
+	background: #070707;
+	border-top:3px solid #000;
+	padding: 25px 0px;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #fff;
+}
+footer p{
+	margin:0px;
+}
+.copyright{
+	text-align: left;
+}
+.privacypolicy{
+	text-align: right;
+}
+.privacypolicy a{
+	color: #fff;
+}
+
+
+/*
+=================================================
+
+TOP MOVIES PAGE STYLING
+
+=================================================
+*/
+
+
+.{}
+.topratedtitle{
+	text-align: left;
+}
+.topratedtitle p{
+	text-transform: capitalize;
+	margin:0px;
+}
+.topratedtitle h4{
+	text-align: left;
+}
+.facebookshare{}
+.facebookshare img{
+	margin:0px auto;
+	display: block;
+}
+.{}
+.sortby {
+	text-align: right;
+}
+.sortby select {
+    background: transparent;
+    padding: 3px;
+    border-radius: 2px;
+}
+.{}
+.{}
+.tabletopmovies{}
+.tabletopmovies tr{
+	color: #fefefe;
+}
+.tabletopmovies tr th{
+	border: none!important;
+	font-weight: 300;
+	text-transform: capitalize;
+	
+}
+.tabletopmovies tr td{
+	border:none!important;
+}
+.titletr{
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px;
+}
+.tableimage{
+	display: flex;
+}
+.tableimage img{
+	margin-right:15px;
+}
+.tableimage span {
+	text-transform: capitalize;
+    position: relative;
+    top: 14px;
+    color: #fefefe;
+    font-weight: 600;
+    font-size: 16px;
+}
+.percentage{
+	font-weight: 300;
+	display: block;
+	text-align: center;
+	margin-top:15px;
+	
+}
+.startimage{}
+.startimage img{
+	margin:0px auto;
+	display: block;
+	text-align: center;
+}
+
+
+
+/**********Responsive style****************/
+@media (max-width: 1200px) {
+	.interstellerarea ul li{
+		padding: 11px;
+		margin-right: 4px;
+	}
+	.posterimage, .posterimage2{
+		width: 374px;
+    	height: 514px;
+	}
+	.posterimage img, .posterimage2 img{
+		top: 24px;
+    	width: 86%;
+	}
+	.ratings{
+    	margin: 5px auto;		
+	}
+}
+
+
+@media (max-width: 767px) {
+
+.posterimage img, .posterimage2 img{
+	margin:auto;
+	border: 6px solid #13373e;
+    width: 100%;
+    position: static;
+}
+
+.posterimage, .posterimage2{
+	width: 100%;
+    height: auto;
+    background: transparent;
+    padding: 0px;
+}
+
+.marginRow{
+	margin-top: 0px;
+}
+
+.bladerunnerarea, .interstellerarea{
+	padding-bottom: 0 !important;
+	padding: 10px 0px;
+}
+
+.maincollapse ul li.active a, .maincollapse ul li a:hover{
+	border-bottom: 0px !important;
+}
+
+.maincollapse ul li a:hover{
+	background: #65862e!important;
+}
+
+.searchbox{
+	padding: 0px;
+	background: transparent;
+}
+
+.htoprightmenu ul li{
+	margin-left: 15px;
+}
+
+.socialicon{
+	display: none;
+}
+
+.interstellerarea h4{
+	margin-bottom: 10px;
+}
+
+.navbar-default .navbar-toggle{
+	margin-right: 30px;
+}
+.htoprightmenu {
+	margin: 25px 0px;
+}
+.htoprightmenu ul {
+text-align: center;
+}
+.welcomemessage {
+text-align: center;
+}
+.logo a img {
+	margin: 0px auto;
+}.maincollapse ul {
+	text-align: center;
+}
+	.smallone {
+	margin-bottom: 10px;
+}
+	.interstellerarea ul,
+.socialicon ul {
+text-align: center;
+}
+.interstellerarea ul li {
+display: inline-block;
+margin: 10px 0px;
+margin-right: 5px;
+}
+.interstellerarea ul li a {
+	display: block;
+	font-size: 18px;
+	color: #fff;
+	text-transform: capitalize;
+}	
+	.infoimage img{
+		display: inline-block;
+		position: static;
+	}	
+	
+	
+	
+.topratedtitle {
+	text-align: center;
+}
+.topratedtitle h4 {
+	text-align: center;
+}	
+.sortby {
+	text-align: center;
+	margin: 20px 0px;
+}
+.tableimage {
+	display: inherit;
+}
+.tableimage span {
+text-transform: capitalize;
+font-weight: 300;
+position: relative;
+top: 0;
+margin-top: 13px;
+}
+
+}
+
+/* iphone (small mobile) ----------- */
+@media only screen and (min-width: 240px) and (max-width: 320px) {
+
+}
+
+
+@media (max-width: 991px){
+	.interstellerarea ul{
+		text-align: center !important;
+	}
+	.ratings span{
+		display: inline-block;
+	}
+	.ratinstext{
+	    width: 100%;
+	}
+	.ratings{
+		margin-top: 40px !important;
+	}
+	.ratinstext img{
+		display: none;
+	}
+	.small-info{
+	    margin-top: 40px;
+	    display: inline;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.interstellerarea ul li{
+		padding: 15px;
+		margin-right: 4px;
+		width: auto;
+    	margin: auto;
+	}
+	.posterimage, .posterimage2{
+		width: 344px;
+    	height: 467px;
+	}
+	.posterimage img, .posterimage2 img{
+		top: 24px;
+    	width: 86%;
+	}
+	.ratings{
+    	margin: 5px auto;		
+	}
+}
+
+@media (max-width: 550px) {
+	.tableimage span{
+		display: block;
+	}
+	tr.titletr{
+		display: none !important;
+	}
+	.tabletopmovies {
+    	border: 0px;
+	}
+	.tabletopmovies tr {
+    	display: block;
+    	width: 100%;
+	}
+	.tabletopmovies tbody tr td:first-child{
+		display: block;
+	    border-top: 1px solid #d6d6d6 !important;
+	    border-bottom: 1px solid #d6d6d6 !important;
+	    margin-bottom: 10px;
+	    padding-bottom: 10px;
+	    margin-top: 20px;
+	}
+	.tabletopmovies tr:nth-child(2){
+	}
+	.table-responsive{
+		overflow: hidden;
+	}
+	.tableimage img {
+	    margin-right: 15px;
+	    display: inline-block;
+	    width: 100%;
+	    margin: auto;
+	}
+	.interstellerarea h4 img {
+    	position: static;
+    	top: -2px;
+    	margin-left: 5px;
+    	display: block;
+    	margin: auto;
+    	margin-top: 10px;
+	}
+	.interstellerarea h4{
+		font-size: 20px;
+	}
+	.interstellerarea ul{
+		margin-bottom: 20px;
+	}
+	.interstellerarea ul li{
+		margin: 6px 0px;
+		padding: 8px 11px;
+	}
+	.interstellerarea ul li a{
+		font-size: 16px;
+	}
+	.posterimage img, .posterimage2 img{
+	    border: 2px solid #13373e;
+	}
+	.copyright, .privacypolicy{
+		text-align: center;
+	}
+	footer{
+	    margin-top: 30px;
+	}
+	.htoprightmenu{
+		margin-bottom: 0px;
+	}
+	.ratings{
+		margin-top: 14px !important;
+	}
+}
+
+@media only screen and (min-width: 310px) and (max-width: 480px) {
+	.interstellerarea ul li a{
+		font-size: 14px;
+	}
+	.interstellerarea h4 {
+    	font-size: 17px;
+	}
+	.interstellerarea ul li{
+		width: 100%;
+		padding: 6px 11px;
+	}
+	.smallone, .ratings{
+		width: 100%;
+	}
+	.small-info{
+		margin-top: 90px;
+    	display: inline-block;
+    	width: 100%;
+	}
+}
+
+
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+ 	
+}
+
+

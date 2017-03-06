@@ -1,18 +1,11 @@
 from pymongo import MongoClient
 from jsonencoder import JSONEncoder
 
-#uri = 'mongodb://runwer:REM040160rem@ds155509.mlab.com:55509/fliqpick'
 uri = ('localhost')
 
+client = MongoClient(uri)
 
-client = MongoClient(uri)#prod,
-                     #connectTimeoutMS=30000,
-                     #socketTimeoutMS=None,
-                     #socketKeepAlive=True)
-
-# producttion: db = client.get_default_database()
-db = client.moviesdb
-
+db = client.get_default_database()
 
 ## functions that mess with moviesCol
 def findMovBattleRand(notlist):
@@ -21,10 +14,7 @@ def findMovBattleRand(notlist):
              {"$sample": {"size": 2}}]
     projection = [{"_id": 0, "Title": 1, "Poster": 1, "id":1}]  # 0 kommer ikke med, 1 kommer med
     movs = db.moviesCol.aggregate(query)
-    out = []
-    for m in movs:
-        out.append(m)
-    return JSONEncoder().encode(out)
+    return JSONEncoder().encode([m for m in movs])
 
 def findMovBattleVs(vs):
     query = [{"$match":
@@ -32,10 +22,7 @@ def findMovBattleVs(vs):
     {"$sample": {"size": 1}}]
     projection = [{"_id": 0, "Title": 1, "Poster": 1, "id":1}]  # 0 kommer ikke med, 1 kommer med
     movs = db.moviesCol.aggregate(query)
-    out = []
-    for m in movs:
-        out.append(m)
-    return JSONEncoder().encode(out)
+    return JSONEncoder().encode([m for m in movs])
 
 def findMov(id):
     query = {"id":id}
@@ -73,18 +60,16 @@ def notSeen(uid, movid):
     db.notSeenCol.insert({"uid": uid, "movieID": movid})
 
 def getNotSeen(uid):
-    query = {"user": uid}
+    query = {"uid": uid}
     projection = {"_id": 0, "movieID": 1}
     outq = db.notSeenCol.find(query, projection)
-    outlist = []
-    for q in outq:
-        outlist.append(q["movieID"])
+    outlist = [q["movieID"] for q in outq]
     return outlist
 
 
 
 if __name__ == '__main__':
-    for e in db.edges.find():
+    for e in getNotSeen("5"):
         print e
 
 
