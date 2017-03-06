@@ -5,7 +5,7 @@ uri = ('localhost')
 
 client = MongoClient(uri)
 
-db = client.get_default_database()
+db = client.moviesdb
 
 ## functions that mess with moviesCol
 def findMovBattleRand(notlist):
