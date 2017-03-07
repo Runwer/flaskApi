@@ -37,7 +37,7 @@ def moviedb():
 def create_task():
     if not request.json or not 'win' in request.json:
         abort(400)
-    newEdge = {"loose" : request.json['loose'], "win": request.json['win'], "user": request.json['user']}
+    newEdge = {"loose" : request.json['loose'], "win": request.json['win'], "uid": session['user']}
     insertEdge(newEdge)
     return ("success"), 201
 

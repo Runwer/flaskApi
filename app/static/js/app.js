@@ -29,47 +29,44 @@
     moviectrl.oldMovieTwo = ""
 
 
-    this.pickMovie = function (e){
-      moviectrl.picked = e.target.getAttribute('data-value');
-      if(moviectrl.picked == "Mov1") {
-        var data = {
-                  user: moviectrl.userID,
-                  win: moviectrl.movieOne.id,
-                  loose: moviectrl.movieTwo.id
-              };
-      } else {
-        var data = {
-                  user: moviectrl.userID,
-                  win: moviectrl.movieTwo.id,
-                  loose: moviectrl.movieOne.id
-              };
-      };
+    this.pickMovie = function (e) {
+        moviectrl.picked = e.target.getAttribute('data-value');
+        if (moviectrl.picked == "Mov1") {
+            var data = {
+                user: moviectrl.userID,
+                win: moviectrl.movieOne.id,
+                loose: moviectrl.movieTwo.id
+            };
+        } else {
+            var data = {
+                user: moviectrl.userID,
+                win: moviectrl.movieTwo.id,
+                loose: moviectrl.movieOne.id
+            };
+        }
+        ;
 
-      $http.post($rootScope.apiuri+'moviedb/api/v1.0/edge', data)
+        $http.post($rootScope.apiuri + 'moviedb/api/v1.0/edge', data)
             .then(function (data, status, headers) {
                 //console.log(data);
             }, function errorCallback(response) {
-              // called asynchronously if an error occurs
-              // or server returns response with an error status.
-              return response;
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                return response;
             })
-            ;
+        ;
 
-      moviectrl.oldMovieOne = moviectrl.movieOne;
-      moviectrl.oldMovieTwo = moviectrl.movieTwo;
-      MovieDataService.pctMovies(moviectrl.movieOne.id, moviectrl.movieTwo.id).then(function(d){
-        moviectrl.pctMovieOne = d[0]
-        moviectrl.pctMovieTwo = d[1]
-      });
+        moviectrl.oldMovieOne = moviectrl.movieOne;
+        moviectrl.oldMovieTwo = moviectrl.movieTwo;
+        MovieDataService.pctMovies(moviectrl.movieOne.id, moviectrl.movieTwo.id).then(function (d) {
+            moviectrl.pctMovieOne = d[0]
+            moviectrl.pctMovieTwo = d[1]
+        });
 
-      MovieDataService.newMovies("2").then(function(d){
-        moviectrl.movieOne = d[0]
-        moviectrl.movieTwo = d[1]
-      });
-      MovieListService.listMovies().then(function(dat){
-        $rootScope.lst = dat
-        //console.log($rootScope.lst)
-      });
+        MovieDataService.newMovies("2").then(function (d) {
+            moviectrl.movieOne = d[0]
+            moviectrl.movieTwo = d[1]
+        });
     }
 
     this.changeMovieOne = function (){
@@ -83,7 +80,6 @@
         moviectrl.movieTwo = d[0]
       });
     }
-
 
 
   };

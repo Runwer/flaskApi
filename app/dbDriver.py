@@ -35,7 +35,7 @@ def insertEdge(edge):
     db.edges.insert(edge)
 
 def findEdge(uid):
-    query = {"user":uid}
+    query = {"uid":uid}
     projection = {"_id": 0, "win": 1, "loose": 1}
     edgesDict = db.edges.find(query, projection)#.count()
     edges = []
@@ -69,8 +69,11 @@ def getNotSeen(uid):
 
 
 if __name__ == '__main__':
-    for e in getNotSeen("5"):
-        print e
+    query = {}
+    projection = {}
+    outq = db.edges.find(query, projection)
+    for o in outq:
+        print o
 
 
 
