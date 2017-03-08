@@ -86,8 +86,8 @@
   function MovieDataService ($http, $rootScope) {
     var service = this;
     //setting api URI
-    $rootScope.apiuri = "http://flask-env.3cnseq7p2s.us-west-2.elasticbeanstalk.com/"
-    //$rootScope.apiuri = "http://127.0.0.1:5000/"
+    //$rootScope.apiuri = "http://flask-env.3cnseq7p2s.us-west-2.elasticbeanstalk.com/"
+    $rootScope.apiuri = "http://127.0.0.1:5000/"
     //List of movies
     var movieout = [];
 

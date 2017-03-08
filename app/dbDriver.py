@@ -70,7 +70,7 @@ def getNotSeen(uid):
 
 if __name__ == '__main__':
     query = {}
-    projection = {}
+    projection = {'uid':1}
     outq = db.edges.find(query, projection)
     for o in outq:
         print o
