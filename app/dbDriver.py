@@ -35,9 +35,8 @@ def insertEdge(edge):
     db.edges.insert(edge)
 
 def findEdge(uid):
-    query = {"uid":uid}
-    projection = {"_id": 0, "win": 1, "loose": 1}
-    edgesDict = db.edges.find(query, projection)#.count()
+    query = {'uid':uid}
+    edgesDict = db.edges.find(query)#.count()
     edges = []
     for e in edgesDict:
         edges.append([str(e["loose"]), str(e["win"])])
@@ -55,6 +54,28 @@ def pctEdge(movid1, movid2):
     else:
         return [50,50]
 
+def winPct(uid):
+    query = {"uid": uid}
+    projection = {"_id": 0, "movieID": 1}
+    w1 = db.edges.find(query)
+    movs = {}
+    for i in w1:
+        if i["win"] in movs:
+            if 'wins' in movs[i["win"]]:
+                movs[i["win"]]['wins'] += 1
+            else:
+                movs[i["win"]]['wins'] = 1
+        else:
+            movs[i["win"]] = {'wins': 1, 'los': 0}
+        if i["loose"] in movs:
+            if 'los' in movs[i["loose"]]:
+                movs[i["loose"]]['los'] += 1
+            else:
+                movs[i["loose"]]['los'] = 1
+        else:
+            movs[i["loose"]] = {'los': 1, 'wins':0}
+    return movs
+
 ### functions regarding the notSeen Collection
 def notSeen(uid, movid):
     db.notSeenCol.insert({"uid": uid, "movieID": movid})
@@ -69,11 +90,5 @@ def getNotSeen(uid):
 
 
 if __name__ == '__main__':
-    query = {}
-    projection = {'uid':1}
-    outq = db.edges.find(query, projection)
-    for o in outq:
-        print o
-
-
+    print winPct('2')
 

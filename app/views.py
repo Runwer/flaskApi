@@ -5,7 +5,7 @@ from flask_cors import CORS, cross_origin
 from Pagerank import pagerank
 from functions import fp_cookie
 import operator
-from dbDriver import findMovBattleRand, findMovBattleVs, findMov, insertEdge, findEdge, pctEdge, notSeen, getNotSeen
+from dbDriver import findMovBattleRand, findMovBattleVs, findMov, insertEdge, findEdge, pctEdge, notSeen, getNotSeen, winPct
 import uuid
 
 #Needs to set this in a template used by all frontend views
@@ -14,9 +14,13 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 #app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
-@app.route('/index')
+@app.route('/index.html')
 def index():
     return fp_cookie('/index.html')
+
+@app.route('/toplist.html')
+def toplisthtml():
+    return fp_cookie('/toplist.html')
 
 #Get movies for Versus
 @app.route('/moviedb/api/v1.0/movies', methods=['GET'])
@@ -44,6 +48,7 @@ def create_task():
 @app.route('/moviedb/api/v1.0/toplist', methods=['GET'])
 @cross_origin()
 def toplist():
+    wins = winPct(session['user'])
     edges = findEdge(session['user'])
     if len(edges) != 0:
         tlist = pagerank(edges)[0]
@@ -52,7 +57,7 @@ def toplist():
         for movlis in sortedtlist:
             temp = findMov(movlis[0])
             temp["points"] = ("%.2f" % movlis[1])
-
+            temp["winpct"] = round(((float(wins[temp['id']]['wins'])/(wins[temp['id']]['wins']+wins[temp['id']]['los']))*100),1)
             outmovs.append(temp)
 
         return jsonify(outmovs)
@@ -62,3 +67,8 @@ def toplist():
 @cross_origin()
 def pctMovie():
     return jsonify(pctEdge(request.args.get('mov1'), request.args.get('mov2')))
+
+@app.route('/moviedb/api/v1.0/winpct', methods=['GET'])
+@cross_origin()
+def winpcts():
+    return jsonify(winPct(session['user']))
