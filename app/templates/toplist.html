@@ -11,9 +11,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fliqpick | Top Movies</title>
+	<meta property="og:url"           content="http://www.fliqpick.html" />
+  	<meta property="og:type"          content="movie website" />
+  	<meta property="og:title"         content="Fliqpick | Inteligent Movie Lists" />
+  	<meta property="og:description"   content="With Fliqpick your personalized movie tolist and recommendation is an art of science" />
+  	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
     <meta name="description" content="Responsive website">
-    <meta name="keywords" content="responsive website">
-    <meta name="author" content="site">
+    <meta name="keywords" content="Movies">
+    <meta name="author" content="Fliqpick">
 
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -153,12 +158,20 @@
 						</div>
 					</div>
 					<div class="col-sm-4">
+						<div id="fb-root"></div>
 						<div class="facebookshare staticfb">
-							<a href="">
-								<img src="/static/img/fbshare.png" class="img-responsive" alt="fbshare">
+							<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.fliqpick.com/toplist.html"
+							onclick="
+							  window.open(
+								'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+								'facebook-share-dialog',
+								'width=626,height=436');
+								return false;">
+								<img src="/static/img/fbshare.png" class="img-responsive fb-share-button" alt="fbshare"
+									 data-href="http://www.your-domain.com/your-page.html" data-layout="button_count">
 							</a>
 						</div>
-					</div>
+
 					<div class="col-sm-4">
 						<div class="sortby">
 							Sort by:
@@ -171,7 +184,6 @@
 						</div>
 					</div>
         		</div><!--end-->
-
         		<div class="row" ng-controller="MovieList">
         			<div class="col-xs-12">
         				<div class="table-responsive tabletopmovies">
@@ -232,7 +244,7 @@
 		<script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-1.11.3.min.js"><\/script>')			</script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
-         <script>
+  		<script>
 
 			   $(document).ready(function(){
 					$('.searchbox i').click(function(){
@@ -252,6 +264,8 @@
                 }
             });
         </script>
+
+
 
 
 </body>
