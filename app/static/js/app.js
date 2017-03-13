@@ -9,15 +9,7 @@
   function MovieController(MovieDataService, $http, $rootScope, $cookies) {
     var moviectrl = this;
     // Retrieving a cookie
-    moviectrl.userID = $cookies.getObject('uid');
-    // needs to be rewritten for actual cookiesetting - Setting cookie
-    if (typeof moviectrl.userID !== 'undefined') {
-      $rootScope.greeting = "Welcome Back" + moviectrl.userID;
-    }
-    else{
-      $rootScope.greeting = "Its your first time and we are stoked to meet you.";
-      $cookies.putObject('uid', '5', {expires: new Date(3017,6, 30)});
-    }
+
 
 
     MovieDataService.newMovies("2").then(function(d){
