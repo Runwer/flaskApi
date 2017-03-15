@@ -4,6 +4,7 @@ import requests
 import uuid
 import json
 
+
 def fp_cookie(html, otherid):
     if otherid != None:
         if 'user' in session:
@@ -34,11 +35,13 @@ def fp_cookie(html, otherid):
                 session['user'] = uid
                 return (resp)
 
-def fp_cookie_top(html, otherid):
 
+def fp_cookie_top(html, otherid):
+    uri = "http://127.0.0.1:5000/moviedb/api/v1.0/toplist?username="
+    #uri = "http://127.0.0.1/moviedb/api/v1.0/toplist?username="
     if otherid != None:
         try:
-            uri = "http://127.0.0.1:5000/moviedb/api/v1.0/toplist?username=" + str(otherid)
+            uri += str(otherid)
             uResponse = requests.get(uri)
         except requests.ConnectionError:
             return "Connection Error"
@@ -60,7 +63,7 @@ def fp_cookie_top(html, otherid):
     else:
         if 'user' in session:
             try:
-                uri = "http://127.0.0.1:5000/moviedb/api/v1.0/toplist?username=" + str(session['user'])
+                uri += str(session['user'])
                 uResponse = requests.get(uri)
             except requests.ConnectionError:
                 return "Connection Error"
@@ -72,7 +75,7 @@ def fp_cookie_top(html, otherid):
                 uid = request.cookies.get('user_id')
                 session['user'] = uid
                 try:
-                    uri = "http://127.0.0.1:5000/moviedb/api/v1.0/toplist?username=" + str(session['user'])
+                    uri += str(session['user'])
                     uResponse = requests.get(uri)
                 except requests.ConnectionError:
                     return "Connection Error"
@@ -85,8 +88,3 @@ def fp_cookie_top(html, otherid):
                 resp.set_cookie('user_id', uid, max_age=3110400000)
                 session['user'] = uid
                 return (resp)
-
-
-
-
-        
