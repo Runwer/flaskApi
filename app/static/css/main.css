@@ -248,14 +248,12 @@ p {
 
 .posterimage {
   /**background: url(../img/ghost.jpg) no-repeat top center; */
-  padding: 25px;
   background-size: cover;
   width: 387px;
   height: 573px; }
 
 .posterimage2 {
   /**background: url(../img/logan.jpg) no-repeat top center; */
-  padding: 25px;
   background-size: cover;
   width: 387px;
   height: 573px; }
@@ -265,19 +263,19 @@ p {
 
 .poster-title {
   position: absolute;
-  top: 50px;
-  left: 50px; }
+  top: 30px;
+  left: 35px; }
 
 .poster-title a {
-  background-color: #a1cc40;
+  background-color: rgba(161, 204, 64, 0.8);
   padding: 10px 40px 10px 20px;
   color: #fff;
   font-weight: 600; }
 
 .poster-info {
   position: absolute;
-  top: 40px;
-  left: 320px;
+  top: 20px;
+  left: 330px;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -287,6 +285,9 @@ p {
   background-color: #d0011b;
   border-radius: 20px;
   float: right; }
+
+.poster-info i {
+  font-size: 25px; }
 
 .smallone img {
   margin: 0px auto;
@@ -573,9 +574,6 @@ TOP MOVIES PAGE STYLING
     text-align: center; }
   footer {
     margin-top: 30px; }
-  .social-footer {
-    display: flex;
-    justify-content: center; }
   .htoprightmenu {
     margin-bottom: 0px; }
   .ratings {
@@ -638,14 +636,22 @@ TOP MOVIES PAGE STYLING
 
 /* BUTTON */
 .interstellerarea ul li.picmovie {
+  position: relative;
   border-radius: 40px;
   background-color: #a1cc40;
   padding: 10px 40px 10px 20px; }
 
 .interstellerarea ul li.seenmovie {
+  position: relative;
   border-radius: 40px;
   background-color: #f6a623;
-  padding: 10px 40px; }
+  padding: 10px 50px 10px 25px; }
+
+.interstellerarea ul li i {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px; }
 
 /* FOOTER */
 footer {

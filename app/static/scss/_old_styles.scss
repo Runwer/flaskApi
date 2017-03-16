@@ -290,14 +290,12 @@ border-bottom: 2px solid #a1cc40;
 
 .posterimage{
 		/**background: url(../img/ghost.jpg) no-repeat top center; */
-    padding: 25px;
     background-size: cover;
 		width: 387px;
     height: 573px;
 }
 .posterimage2{
 		/**background: url(../img/logan.jpg) no-repeat top center; */
-    padding: 25px;
     background-size: cover;
     width: 387px;
     height: 573px;
@@ -308,19 +306,19 @@ border-bottom: 2px solid #a1cc40;
 }
 .poster-title{
 	position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 30px;
+    left: 35px;
 }
 .poster-title a{
-background-color: #a1cc40;
+background-color: rgba(161, 204, 64, 0.8);
 padding: 10px 40px 10px 20px;
 color: #fff;
 font-weight: 600;
 }
 .poster-info {
 	position: absolute;
-	top: 40px;
-	left: 320px;
+	top: 20px;
+	left: 330px;
 	color: #fff;
 	display: flex;
   justify-content: center;
@@ -330,6 +328,9 @@ font-weight: 600;
 	background-color: #d0011b;
 	border-radius: 20px;
 	float: right;
+}
+.poster-info i{
+	font-size: 25px;
 }
 
 
@@ -711,10 +712,6 @@ margin-top: 13px;
 	}
 	footer{
 	    margin-top: 30px;
-	}
-	.social-footer {
-		display: flex;
-    justify-content: center;
 	}
 	.htoprightmenu{
 		margin-bottom: 0px;
