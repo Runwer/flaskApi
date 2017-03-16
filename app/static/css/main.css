@@ -220,7 +220,6 @@ TOP MOVIES PAGE STYLING
 @media (max-width: 767px) {
   .posterimage img, .posterimage2 img {
     margin: auto;
-    border: 6px solid #13373e;
     width: 100%;
     position: static; }
   .posterimage, .posterimage2 {
@@ -356,8 +355,6 @@ TOP MOVIES PAGE STYLING
     padding: 8px 11px; }
   .interstellerarea ul li a {
     font-size: 16px; }
-  .posterimage img, .posterimage2 img {
-    border: 2px solid #13373e; }
   .copyright, .privacypolicy {
     text-align: center; }
   footer {
@@ -486,6 +483,9 @@ p {
       display: flex;
       justify-content: space-between;
       align-items: center; }
+      @media (max-width: 767px) {
+        .headerlogoarea .mainavigation .maincontainer {
+          display: block; } }
   .headerlogoarea .navbar-header {
     width: 210px; }
     .headerlogoarea .navbar-header .logo {
@@ -503,6 +503,19 @@ p {
           display: inline-block; }
       .headerlogoarea .navbar-header .logo img {
         max-width: 177px; }
+      @media (max-width: 767px) {
+        .headerlogoarea .navbar-header .logo {
+          float: left;
+          padding: 5px 0px 5px 0px; } }
+    @media (max-width: 767px) {
+      .headerlogoarea .navbar-header {
+        width: auto; } }
+    @media (max-width: 767px) {
+      .headerlogoarea .navbar-header .navbar-toggle {
+        margin-right: 0px; } }
+    @media (max-width: 767px) {
+      .headerlogoarea .navbar-header {
+        padding: 10px 0px 10px 0px; } }
   .headerlogoarea .maincollapse {
     padding: 0; }
     .headerlogoarea .maincollapse ul li {
@@ -510,10 +523,12 @@ p {
       .headerlogoarea .maincollapse ul li:last-child {
         margin-right: 0px; }
       .headerlogoarea .maincollapse ul li a {
-        padding: 40px 0px 40px;
+        padding: 37px 0px 40px;
         font-size: 16px;
         text-transform: uppercase;
         color: white; }
+        .headerlogoarea .maincollapse ul li a:hover {
+          color: #fff; }
       .headerlogoarea .maincollapse ul li.actives a {
         color: #a1cc40 !important;
         border-bottom: 2px solid #a1cc40;
@@ -523,8 +538,19 @@ p {
     color: #ffffff;
     font-size: 18px;
     text-align: right; }
-    .headerlogoarea .social-head i:first-child {
-      margin-right: 15px; }
+    .headerlogoarea .social-head a {
+      color: #fff; }
+      .headerlogoarea .social-head a i:first-child {
+        margin-right: 15px; }
+    @media (max-width: 991px) {
+      .headerlogoarea .social-head {
+        width: auto; } }
+    @media (max-width: 767px) {
+      .headerlogoarea .social-head {
+        display: none; } }
+  @media (max-width: 767px) {
+    .headerlogoarea {
+      margin-bottom: 80px; } }
 
 /* BUTTON */
 .button-primary {
@@ -537,8 +563,14 @@ p {
   box-shadow: none; }
   .button-primary.is-green {
     background-color: #a1cc40; }
+    .button-primary.is-green:hover {
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      background-color: #b5e44a; }
   .button-primary.is-yellow {
     background-color: #f6a623; }
+    .button-primary.is-yellow:hover {
+      background-color: #ffca00;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); }
   .button-primary i {
     position: absolute;
     top: 10px;
@@ -553,12 +585,18 @@ footer {
   text-transform: uppercase;
   font-weight: 600;
   color: #fff; }
+  footer .copyright p {
+    font-weight: 300; }
+  footer .privacypolicy p {
+    font-weight: 300; }
   footer .social-footer {
     font-size: 18px;
     display: flex;
     justify-content: center; }
-    footer .social-footer i:first-child {
-      margin-right: 15px; }
+    footer .social-footer a {
+      color: #fff; }
+      footer .social-footer a i:first-child {
+        margin-right: 15px; }
 
 .btn-wrapper {
   margin-bottom: 25px;
@@ -570,10 +608,15 @@ footer {
   .posterimage .posterimage img, .posterimage .posterimage2 img {
     height: 100%; }
   .posterimage .poster-title {
+    max-width: 70%;
+    text-overflow: ellipsis;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: rgba(161, 204, 64, 0.8);
+    background-color: rgba(159, 159, 159, 0.6);
     padding: 10px 40px 10px 20px;
     color: #fff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
@@ -598,3 +641,26 @@ footer {
     max-width: 100%;
     width: 100%;
     max-height: 530px; }
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .posterimage img {
+    max-width: 100%;
+    width: 100%;
+    max-height: 508px; } }
+
+@media (max-width: 767px) {
+  .posterimage img {
+    max-width: 344px; }
+  .posterimage {
+    text-align: center;
+    padding-bottom: 50px; }
+  .btn-wrapper {
+    display: flex;
+    justify-content: center; }
+    .btn-wrapper .is-green {
+      margin-right: 15px; } }
+
+@media (max-width: 500px) {
+  .posterimage img {
+    max-width: none;
+    max-height: none; } }

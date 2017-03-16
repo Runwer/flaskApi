@@ -11,6 +11,9 @@
     	display: flex;
     	justify-content: space-between;
       align-items: center;
+      @media (max-width: 767px) {
+        display: block;
+      }
     }
   }
     .navbar-header{
@@ -35,6 +38,21 @@
         img {
           max-width: 177px;
         }
+        @media (max-width: 767px) {
+          float: left;
+          padding: 5px 0px 5px 0px;
+        }
+      }
+      @media (max-width: 767px) {
+        width: auto;
+      }
+      @media (max-width: 767px) {
+        .navbar-toggle{
+          margin-right: 0px;
+        }
+      }
+      @media (max-width: 767px) {
+        padding: 10px 0px 10px 0px;
       }
     }
   .maincollapse{
@@ -46,10 +64,13 @@
           margin-right: 0px;
         }
         a{
-          padding: 40px 0px 40px;
+          padding: 37px 0px 40px;
           font-size: 16px;
           text-transform: uppercase;
           color: white;
+          &:hover{
+            color:#fff;
+          }
         }
         &.actives a{
         	color: #a1cc40 !important;
@@ -64,9 +85,21 @@
     color : #ffffff;
     font-size: 18px;
     text-align: right;
+    a{
+      color: #fff;
     i:first-child{
       margin-right: 15px;
+      }
     }
+    @media (max-width: 991px) {
+      width: auto;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 80px;
   }
 }
 /* BUTTON */
@@ -80,9 +113,17 @@
     box-shadow: none;
     &.is-green{
       background-color: #a1cc40;
+      &:hover{
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        background-color: #b5e44a;
+      }
     }
     &.is-yellow{
     background-color: #f6a623;
+      &:hover{
+        background-color: #ffca00;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      }
     }
     i{
       position: absolute;
@@ -92,6 +133,7 @@
     }
 }
 
+
 /* FOOTER */
 footer{
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
@@ -100,13 +142,25 @@ footer{
   text-transform: uppercase;
   font-weight: 600;
   color: #fff;
-
+  .copyright{
+      p{
+        font-weight: 300;
+      }
+    }
+  .privacypolicy{
+      p{
+      font-weight: 300;
+    }
+  }
   .social-footer{
     font-size: 18px;
     display: flex;
     justify-content: center;
-    i:first-child{
-      margin-right: 15px;
+      a{
+        color:#fff;
+      i:first-child{
+        margin-right: 15px;
+      }
     }
   }
 }
