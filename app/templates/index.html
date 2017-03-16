@@ -41,30 +41,25 @@
 
 
     <!--font awesome-->
-    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.css">
 
     <!--end font awesome-->
 
 
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/normalize.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <script src="/static/js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="/static/js/angular.min.js"></script>
-    <script src="/static/js/app.js"></script>
-    <script src="/static/js/angular-cookies.min.js"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"> -->
+    <script src="../static/js/vendor/modernizr-2.6.2.min.js"></script>
+    <!-- <script src="../static/js/angular.min.js"></script>
+    <script src="../static/js/app.js"></script>
+    <script src="../static/js/angular-cookies.min.js"></script> -->
     <!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
-
-
 </head>
-
 <body ng-controller="MovieController as moviectrl">
-
 <!--
 		<div class="headertop">
 			<div class="container">
@@ -80,9 +75,8 @@
 								<li><a href="">FAQ</a></li>&nbsp;&nbsp;&nbsp;|&nbsp;
 								<li><a href="">Privacy</a></li>
 								<li class="searchbox">
-								   <input type="search" placeholder="Search">
+								  <input type="search" placeholder="Search">
 									<i class="fa fa-search"></i>
-
 								</li>
 							</ul>
 						</div>
@@ -90,66 +84,62 @@
 				</div>
 			</div>
 		</div>
-        <!--end-->
-
-
-
+  <!--end-->
         <div class="headerlogoarea">
         	<div class="container">
-        		<div class="row">
-        			<div class="col-sm-4">
-        				<div class="logo">
+        			<div class="col-sm-12">
+                <nav class="mainavigation navbar navbar-default">
+        		  <div class=" maincontainer">
+        			<!-- Brand and toggle get grouped for better mobile display -->
+        			<div class="navbar-header">
+                <div class="logo">
         					<a href="/index.html">
-        						<img src="/static/img/logo.png" class="img-responsive" alt="logo">
+        						<img src="../static/img/logo.png" class="img-responsive" alt="logo">
         					</a>
+                  <div class="logomiddletext">
+          					<h3>Your <span>movie</span> Toplist! <span>Pick</span> by <span>Fliq</span> </h3>
+          				</div>
         				</div>
+        			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        				<span class="sr-only">Toggle navigation</span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        			  </button>
+        			  <!--<a class="navbar-brand" href="#">Brand</a>-->
         			</div>
-        			<div class="col-sm-5">
-        				<div class="logomiddletext">
-        					<h3>Your <span>movie</span> Toplist! <span>Pick</span> by <span>Fliq</span> </h3>
-        				</div>
+
+        			<!-- Collect the nav links, forms, and other content for toggling -->
+        			<div class="maincollapse collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        			  <ul class="nav navbar-nav">
+        				<li class="actives"><a href="index.html">Home</a></li>
+        				<li><a href="#">about</a></li>
+        				<li><a href="#">top list</a></li>
+                <li><a href="#">contact</a></li>
+        			  </ul>
+
+        			  <!--<ul class="rightnavbar nav navbar-nav navbar-right">
+        				<li><a href="toplist.html">go to your top list</a></li>
+
+              </ul> -->
+        			</div><!-- /.navbar-collapse -->
+              <div class="social-head">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+              </div>
+        		  </div><!-- /.container-fluid -->
+        		</nav>
         			</div>
-        			<div class="col-sm-3">
-        				<div class="socialicon">
+        				<!--<div class="socialicon">
         					<ul>
-        						<li><a href=""><img src="/static/img/fb.png" class="img-responsive" alt="fb"></a></li>
+        						<li><a href=""><img src="../static/img/fb.png" class="img-responsive" alt="fb"></a></li>
         					</ul>
-        				</div>
-        			</div>
-        		</div>
+        				</div> -->
+
         	</div>
         </div>
         <!--end-->
 
-        <nav class="mainavigation navbar navbar-default">
-		  <div class="container maincontainer">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-			  <!--<a class="navbar-brand" href="#">Brand</a>-->
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="maincollapse collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			  <ul class="nav navbar-nav">
-				<li class="active"><a href="index.html">Home</a></li>
-				<li><a href="#">about</a></li>
-				<li><a href="#">contact</a></li>
-
-			  </ul>
-
-			  <ul class="rightnavbar nav navbar-nav navbar-right">
-				<li><a href="toplist.html">go to your top list</a></li>
-
-			  </ul>
-			</div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
-		</nav>
 
 
     <section class="interstellerarea">
@@ -157,22 +147,22 @@
         <div class="row">
           <div class="col-sm-5 col-sm-6 col-xs-6">
             <div class="interstellerarea">
-              <h4>{{ '{{ moviectrl.movieOne.Title}}' }} ({{ '{{moviectrl.movieOne.Year}}' }}) <a href=""><img src="/static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></a></h4>
+              <!--<h4>{{ '{{ moviectrl.movieOne.Title}}' }} ({{ '{{moviectrl.movieOne.Year}}' }}) <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></a></h4> -->
               <ul>
-                <li type="button" class="picmovie btn btn-success" ng-click="moviectrl.pickMovie($event)" data-value="Mov1">Pick Movie</li>
-                <li type="button" class="seenmovie btn btn-warning" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie</li>
-                <li class="infoimage hidden-sm hidden-xs" data-toggle="tooltip" title="{{movOneDesc}}"><a href=""><img src="/static/img/infoimage.png" class="img-responsive"></a></li>
+                <li type="button" class="picmovie btn btn-success" ng-click="moviectrl.pickMovie($event)" data-value="Mov1">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></li>
+                <li type="button" class="seenmovie btn btn-warning" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></li>
+                <!--<li class="infoimage hidden-sm hidden-xs" data-toggle="tooltip" title="{{movOneDesc}}"><a href=""><img src="../static/img/infoimage.png" class="img-responsive"></a></li>-->
               </ul>
             </div>
           </div>
 
           <div class="col-sm-5 col-sm-6 col-xs-6">
             <div class="bladerunnerarea">
-              <h4>{{ '{{ moviectrl.movieTwo.Title }}' }} ({{ '{{moviectrl.movieTwo.Year}}' }}) <a href=""><img src="/static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></a></h4>
+            <!--  <h4>{{ '{{ moviectrl.movieTwo.Title }}' }} ({{ '{{moviectrl.movieTwo.Year}}' }}) <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></a></h4>-->
               <ul>
-                <li type="button" class="picmovie btn btn-success" ng-click="moviectrl.pickMovie($event)" data-value="Mov2">Pick Movie</li>
-                <li type="button" class="seenmovie btn btn-warning" ng-click="moviectrl.changeMovieTwo()">Not Seen This Movie</li>
-                <li class="infoimage hidden-sm hidden-xs" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"><a href=""><img src="/static/img/infoimage.png" class="img-responsive"></a></li>
+                <li type="button" class="picmovie btn btn-success" ng-click="moviectrl.pickMovie($event)" data-value="Mov2">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></li>
+                <li type="button" class="seenmovie btn btn-warning" ng-click="moviectrl.changeMovieTwo()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></li>
+                <!--<li class="infoimage hidden-sm hidden-xs" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"><a href=""><img src="../static/img/infoimage.png" class="img-responsive"></a></li> -->
               </ul>
             </div>
           </div>
@@ -180,22 +170,36 @@
         </div><!--end-->
 
 
-        <div class="row marginRow">
+        <div class="row">
           <div class="col-md-5 col-sm-6 col-xs-6">
             <div class="posterimage">
-              <div class="interstellerimage">
+              <img src="../static/img/logan.jpg" alt="">
+              <div class="poster-title">
+                <a href="">Logan (2017)</a>
+              </div>
+              <div class="poster-info">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+              </div>
+              <!--<div class="interstellerimage">
                 <img class="img-responsive" alt="interstellar" ng-click="moviectrl.pickMovie($event)" data-value="Mov1"
                               ng-src="/static/posters/{{ '{{ moviectrl.movieOne.Poster}}' }}.jpg">
-              </div>
+              </div>-->
             </div>
           </div>
 
           <div class="col-md-5 col-sm-6 col-xs-6">
-            <div class="posterimage">
-              <div class="bladeimage">
+            <div class="posterimage2">
+              <img src="../static/img/ghost.jpg" alt="">
+              <div class="poster-title">
+                <a href="">Ghost in the shell (2017)</a>
+              </div>
+              <div class="poster-info">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+              </div>
+              <!--<div class="bladeimage">
                 <img class="img-responsive" alt="bladeimage" ng-click="moviectrl.pickMovie($event)" data-value="Mov2"
                           ng-src="/static/posters/{{ '{{moviectrl.movieTwo.Poster}}' }}.jpg">
-              </div>
+              </div>-->
             </div>
           </div>
                 <div class="col-sm-2 hidden-sm hidden-xs">
@@ -207,7 +211,7 @@
 
                         <div class="ratings">
                             <span class="roundpercent">{{ '{{moviectrl.pctMovieOne}}' }}%</span>
-                            <span class="ratinstext">rating<img src="/static/img/arrow.png" class="img-responsive"></span>
+                            <span class="ratinstext">rating<img src="../static/img/arrow.png" class="img-responsive"></span>
                             <span class="roundpercent">{{ '{{moviectrl.pctMovieTwo}}' }}%</span>
                         </div>
 
@@ -228,12 +232,18 @@
 
     <footer>
       <div class="container">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <div class="copyright">
             <p>fliqpick.com copyright 2017</p>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+          <div class="social-footer">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="col-sm-4">
           <div class="privacypolicy">
             <p><a href="">privacy policy</a></p>
           </div>
@@ -243,9 +253,9 @@
 
     <!-- script here -->
 
-<script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-1.11.3.min.js" async><\/script>') </script>
+<script>window.jQuery || document.write('<script src="../static/js/vendor/jquery-1.11.3.min.js" async><\/script>') </script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
        <script>
 
      $(document).ready(function(){
