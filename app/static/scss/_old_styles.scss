@@ -55,10 +55,6 @@ Author URI: http://www.themezwarrior.com
 	padding: 2px 9px;
 	background: #000;
 }
-.img-responsive{
-	max-width: 180px;
-	max-height: 60px;
-}
 .fixedfb{
 	width: 100%;
     background: rgba(0,0,0,0.6);
@@ -82,22 +78,7 @@ Author URI: http://www.themezwarrior.com
 .socialicon ul li a img{
 	display: inline-block;
 }
-.maincollapse{
-	padding-left:0px;
-}
-.maincollapse ul{}
-.maincollapse ul li{
-	margin-right:10px;
-}
-.maincollapse ul li a{
-	color: #fefefe!important;
-	font-size:18px;
-	text-transform: uppercase;
-}
-.maincollapse ul li.actives a{
-color: #a1cc40 !important;
-border-bottom: 2px solid #a1cc40;
-}
+
 .tabletopmovies {
 	min-height: .01%;
 	overflow-x: inherit;
@@ -106,100 +87,11 @@ border-bottom: 2px solid #a1cc40;
 
 .bladerunnerarea,
 .interstellerarea{
-	padding: 30px 0px;
-}
-.interstellerarea h4{
-	color: #fff;
-	font-weight: 600;
-	text-transform: capitalize;
-	text-align: center;
-	margin-bottom: 40px;
-}
-.interstellerarea h4 img{
-	position: relative;
-    top: -2px;
-    margin-left: 5px;
-}
-.interstellerarea ul{
-	text-align: left;
-}
-.interstellerarea ul li{
-	display: inline;
-	margin-right: 15px;
+	padding: 80px 0px;
+	height: auto;
+	min-height: calc(100vh - 177px);
 }
 
-.interstellerarea ul li::last-child{
-	margin-right:0px!important;
-}
-.interstellerarea ul li a{
-	display: inline-block;
-	font-size:18px;
-	color:#fff;
-	text-transform: capitalize;
-}
-.infoimage{
-	border-radius: 4px;
-  background-color: rgb( 68, 73, 66 );
-  box-shadow: 0px 2.598px 0px 0px rgb( 42, 44, 38 );
-	padding: 15px 20px;
-	margin-right: 0 !important;
-	cursor: pointer;
-}
-
-.infoimage img{
-	position: relative;
-    top: 4px;
-}
-
-.posterimage{
-		/**background: url(../img/ghost.jpg) no-repeat top center; */
-    background-size: cover;
-		width: 387px;
-    height: 573px;
-}
-.posterimage2{
-		/**background: url(../img/logan.jpg) no-repeat top center; */
-    background-size: cover;
-    width: 387px;
-    height: 573px;
-}
-
-.posterimage img, .posterimage2 img{
-	height: 100%;
-}
-.poster-title{
-	position: absolute;
-    top: 30px;
-    left: 35px;
-}
-.poster-title a{
-background-color: rgba(161, 204, 64, 0.8);
-padding: 10px 40px 10px 20px;
-color: #fff;
-font-weight: 600;
-}
-.poster-info {
-	position: absolute;
-	top: 20px;
-	left: 330px;
-	color: #fff;
-	display: flex;
-  justify-content: center;
-  align-items: center;
-	width: 40px;
-	height: 40px;
-	background-color: #d0011b;
-	border-radius: 20px;
-	float: right;
-}
-.poster-info i{
-	font-size: 25px;
-}
-
-
-.posterimage{}
-.smallmovieimage{}
-.smallone{}
 .smallone img{
 	margin:0px auto;
 	display: block;
@@ -374,14 +266,6 @@ TOP MOVIES PAGE STYLING
 .bladerunnerarea, .interstellerarea{
 	padding-bottom: 0 !important;
 	padding: 10px 0px;
-}
-
-.maincollapse ul li.active a, .maincollapse ul li a:hover{
-	border-bottom: 0px !important;
-}
-
-.maincollapse ul li a:hover{
-	background: #65862e!important;
 }
 
 .searchbox{

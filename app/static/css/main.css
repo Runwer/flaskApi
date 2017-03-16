@@ -5,98 +5,6 @@ Author URI: http://www.themezwarrior.com
 
 
 */
-/********new great things created by me****************/
-html {
-  width: 100%;
-  height: auto; }
-
-* {
-  margin: 0;
-  padding: 0; }
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-*:focus {
-  outline: none !important; }
-
-body {
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
-  line-height: 1.6em;
-  text-align: left;
-  margin: 0px auto !important;
-  overflow-x: hidden;
-  color: #7b7b7b;
-  -webkit-font-smoothing: antialiased;
-  width: 100%;
-  height: auto;
-  background: url("../img/Artboard.png");
-  background-position: top center;
-  background-size: cover; }
-
-img {
-  max-width: 100%;
-  border: none;
-  height: auto;
-  display: inline-block; }
-
-a {
-  text-decoration: none !important; }
-
-a,
-a:hover {
-  text-decoration: none !important;
-  -moz-transition: all 0.2s ease 0s;
-  -webkit-transition: all 0.2s ease 0s;
-  -ms-transition: all 0.2s ease 0s;
-  -o-transition: all 0.2s ease 0s;
-  transition: all 0.2s ease 0s; }
-
-a:focus {
-  outline: none !important; }
-
-a:active {
-  text-decoration: none !important; }
-
-textarea:focus, input:focus {
-  outline: 0; }
-
-select:focus {
-  outline: none !important; }
-
-ul {
-  padding: 0px;
-  margin: 0px;
-  list-style: none; }
-
-h1 {
-  font-size: 40px; }
-
-h2 {
-  font-size: 36px; }
-
-h3 {
-  font-size: 28px; }
-
-h4 {
-  font-size: 24px; }
-
-h5 {
-  font-size: 20px; }
-
-h6 {
-  font-size: 16px; }
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 10px 0px; }
-
-p {
-  margin-top: 0px; }
-
-/************************/
 .marginRow {
   margin-top: 30px; }
 
@@ -141,10 +49,6 @@ p {
   padding: 2px 9px;
   background: #000; }
 
-.img-responsive {
-  max-width: 180px;
-  max-height: 60px; }
-
 .fixedfb {
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -168,35 +72,6 @@ p {
 .socialicon ul li a img {
   display: inline-block; }
 
-.maincollapse {
-  padding-left: 0px; }
-
-.maincollapse ul li {
-  margin-right: 10px; }
-
-.maincollapse ul li a {
-  color: #fefefe !important;
-  font-size: 18px;
-  text-transform: uppercase; }
-
-/*.maincollapse ul li a:hover{
-	border-bottom: 5px solid #a0ce4e;
-  color: #a0ce4e !important;
-}
-.maincollapse ul li a:focus{
-	border-bottom: 5px solid #a0ce4e;
-	background: rgba(72,89,78,1)!important;
-	color: #fefefe!important;
-}
-.maincollapse ul li a:active{
-	border-bottom: 5px solid #a0ce4e;
-	background: rgba(72,89,78,1)!important;
-	color: #fefefe!important;
-}*/
-.maincollapse ul li.actives a {
-  color: #a1cc40 !important;
-  border-bottom: 2px solid #a1cc40; }
-
 .tabletopmovies {
   min-height: .01%;
   overflow-x: inherit; }
@@ -204,90 +79,9 @@ p {
 /**********intersteller****************/
 .bladerunnerarea,
 .interstellerarea {
-  padding: 30px 0px; }
-
-.interstellerarea h4 {
-  color: #fff;
-  font-weight: 600;
-  text-transform: capitalize;
-  text-align: center;
-  margin-bottom: 40px; }
-
-.interstellerarea h4 img {
-  position: relative;
-  top: -2px;
-  margin-left: 5px; }
-
-.interstellerarea ul {
-  text-align: left; }
-
-.interstellerarea ul li {
-  display: inline;
-  margin-right: 15px; }
-
-.interstellerarea ul li::last-child {
-  margin-right: 0px !important; }
-
-.interstellerarea ul li a {
-  display: inline-block;
-  font-size: 18px;
-  color: #fff;
-  text-transform: capitalize; }
-
-.infoimage {
-  border-radius: 4px;
-  background-color: #444942;
-  box-shadow: 0px 2.598px 0px 0px #2a2c26;
-  padding: 15px 20px;
-  margin-right: 0 !important;
-  cursor: pointer; }
-
-.infoimage img {
-  position: relative;
-  top: 4px; }
-
-.posterimage {
-  /**background: url(../img/ghost.jpg) no-repeat top center; */
-  background-size: cover;
-  width: 387px;
-  height: 573px; }
-
-.posterimage2 {
-  /**background: url(../img/logan.jpg) no-repeat top center; */
-  background-size: cover;
-  width: 387px;
-  height: 573px; }
-
-.posterimage img, .posterimage2 img {
-  height: 100%; }
-
-.poster-title {
-  position: absolute;
-  top: 30px;
-  left: 35px; }
-
-.poster-title a {
-  background-color: rgba(161, 204, 64, 0.8);
-  padding: 10px 40px 10px 20px;
-  color: #fff;
-  font-weight: 600; }
-
-.poster-info {
-  position: absolute;
-  top: 20px;
-  left: 330px;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background-color: #d0011b;
-  border-radius: 20px;
-  float: right; }
-
-.poster-info i {
-  font-size: 25px; }
+  padding: 80px 0px;
+  height: auto;
+  min-height: calc(100vh - 177px); }
 
 .smallone img {
   margin: 0px auto;
@@ -439,10 +233,6 @@ TOP MOVIES PAGE STYLING
   .bladerunnerarea, .interstellerarea {
     padding-bottom: 0 !important;
     padding: 10px 0px; }
-  .maincollapse ul li.active a, .maincollapse ul li a:hover {
-    border-bottom: 0px !important; }
-  .maincollapse ul li a:hover {
-    background: #65862e !important; }
   .searchbox {
     padding: 0px;
     background: transparent; }
@@ -460,8 +250,6 @@ TOP MOVIES PAGE STYLING
     text-align: center; }
   .welcomemessage {
     text-align: center; }
-  .logo a img {
-    margin: 0px auto; }
   .maincollapse ul {
     text-align: center; }
   .smallone {
@@ -594,9 +382,100 @@ TOP MOVIES PAGE STYLING
     display: inline-block;
     width: 100%; } }
 
+html {
+  height: auto;
+  width: 100%; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:focus {
+  outline: none !important; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.6em;
+  text-align: left;
+  margin: 0px auto !important;
+  overflow-x: hidden;
+  color: #7b7b7b;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: auto;
+  background: url("../img/Artboard.png");
+  background-position: top center;
+  background-size: cover;
+  height: auto; }
+
+img {
+  max-width: 100%;
+  border: none;
+  height: auto;
+  display: inline-block; }
+
+a {
+  text-decoration: none !important; }
+
+a,
+a:hover {
+  text-decoration: none !important;
+  -moz-transition: all 0.2s ease 0s;
+  -webkit-transition: all 0.2s ease 0s;
+  -ms-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s; }
+
+a:focus {
+  outline: none !important; }
+
+a:active {
+  text-decoration: none !important; }
+
+textarea:focus, input:focus {
+  outline: 0; }
+
+select:focus {
+  outline: none !important; }
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none; }
+
+h1 {
+  font-size: 40px; }
+
+h2 {
+  font-size: 36px; }
+
+h3 {
+  font-size: 28px; }
+
+h4 {
+  font-size: 24px; }
+
+h5 {
+  font-size: 20px; }
+
+h6 {
+  font-size: 16px; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 10px 0px; }
+
+p {
+  margin-top: 0px; }
+
 /* NAV-MENU */
 .headerlogoarea {
-  background: rgba(59, 48, 48, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); }
   .headerlogoarea .mainavigation {
     margin: 0px;
@@ -613,19 +492,32 @@ TOP MOVIES PAGE STYLING
       padding-top: 7px; }
       .headerlogoarea .navbar-header .logo .logomiddletext h3 {
         font-size: 15px;
-        text-transform: capitalize; }
+        text-transform: capitalize;
+        line-height: 1.2;
+        color: #ffffff;
+        font-weight: 400;
+        margin: 2.5px 0px; }
         .headerlogoarea .navbar-header .logo .logomiddletext h3 span {
-          color: #a0ce4e;
-          font-weight: 600;
+          color: #91c532;
+          font-weight: bold;
           display: inline-block; }
-  .headerlogoarea .maincollapse ul li {
-    margin-right: 25px; }
-    .headerlogoarea .maincollapse ul li:last-child {
-      margin-right: 0px; }
-    .headerlogoarea .maincollapse ul li a {
-      padding: 40px 0px 40px;
-      font-size: 16px;
-      text-transform: uppercase; }
+      .headerlogoarea .navbar-header .logo img {
+        max-width: 177px; }
+  .headerlogoarea .maincollapse {
+    padding: 0; }
+    .headerlogoarea .maincollapse ul li {
+      margin-right: 25px; }
+      .headerlogoarea .maincollapse ul li:last-child {
+        margin-right: 0px; }
+      .headerlogoarea .maincollapse ul li a {
+        padding: 40px 0px 40px;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: white; }
+      .headerlogoarea .maincollapse ul li.actives a {
+        color: #a1cc40 !important;
+        border-bottom: 2px solid #a1cc40;
+        font-weight: 500; }
   .headerlogoarea .social-head {
     width: 210px;
     color: #ffffff;
@@ -635,27 +527,28 @@ TOP MOVIES PAGE STYLING
       margin-right: 15px; }
 
 /* BUTTON */
-.interstellerarea ul li.picmovie {
+.button-primary {
+  padding: 10px 40px 10px 20px;
   position: relative;
   border-radius: 40px;
-  background-color: #a1cc40;
-  padding: 10px 40px 10px 20px; }
-
-.interstellerarea ul li.seenmovie {
-  position: relative;
-  border-radius: 40px;
-  background-color: #f6a623;
-  padding: 10px 50px 10px 25px; }
-
-.interstellerarea ul li i {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 18px; }
+  color: white;
+  outline: none;
+  border: none;
+  box-shadow: none; }
+  .button-primary.is-green {
+    background-color: #a1cc40; }
+  .button-primary.is-yellow {
+    background-color: #f6a623; }
+  .button-primary i {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px; }
 
 /* FOOTER */
 footer {
-  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
   padding: 25px 0px;
   text-transform: uppercase;
   font-weight: 600;
@@ -666,3 +559,42 @@ footer {
     justify-content: center; }
     footer .social-footer i:first-child {
       margin-right: 15px; }
+
+.btn-wrapper {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between; }
+
+.posterimage {
+  position: relative; }
+  .posterimage .posterimage img, .posterimage .posterimage2 img {
+    height: 100%; }
+  .posterimage .poster-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(161, 204, 64, 0.8);
+    padding: 10px 40px 10px 20px;
+    color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    font-weight: 500; }
+  .posterimage .poster-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #d0011b;
+    border-radius: 20px;
+    float: right; }
+  .posterimage .poster-info i {
+    font-size: 25px; }
+  .posterimage img {
+    max-width: 100%;
+    width: 100%;
+    max-height: 530px; }

@@ -1,6 +1,6 @@
 /* NAV-MENU */
 .headerlogoarea{
-  background: rgba(59, 48, 48, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   .mainavigation{
     margin: 0px;
@@ -21,16 +21,24 @@
           h3{
             font-size: 15px;
             text-transform: capitalize;
+            line-height: 1.2;
+            color: #ffffff;
+            font-weight: 400;
+            margin: 2.5px 0px;
             span{
-              color: #a0ce4e;
-            	font-weight: 600;
+              color: #91c532;
+            	font-weight: bold;
             	display: inline-block;
             }
           }
         }
+        img {
+          max-width: 177px;
+        }
       }
     }
   .maincollapse{
+    padding: 0;
     ul{
       li{
         margin-right: 25px;
@@ -41,6 +49,12 @@
           padding: 40px 0px 40px;
           font-size: 16px;
           text-transform: uppercase;
+          color: white;
+        }
+        &.actives a{
+        	color: #a1cc40 !important;
+        	border-bottom: 2px solid #a1cc40;
+          font-weight: 500;
         }
       }
     }
@@ -56,32 +70,37 @@
   }
 }
 /* BUTTON */
-.interstellerarea{
-  ul{
-    li{
-      &.picmovie{
-      position: relative;
-      border-radius: 40px;
+.button-primary{
+    padding: 10px 40px 10px 20px;
+    position: relative;
+    border-radius: 40px;
+    color: white;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    &.is-green{
       background-color: #a1cc40;
-      padding: 10px 40px 10px 20px;
-      }
-      &.seenmovie{
-      position: relative;
-      border-radius: 40px;
-      background-color: #f6a623;
-      padding: 10px 50px 10px 25px;
-      }
-      i{
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 18px;
-      }
     }
-  }
+    &.is-yellow{
+    background-color: #f6a623;
+    }
+    i{
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 18px;
+    }
 }
+
 /* FOOTER */
 footer{
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px 0px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+
   .social-footer{
     font-size: 18px;
     display: flex;
@@ -90,9 +109,4 @@ footer{
       margin-right: 15px;
     }
   }
-  background: rgba(0, 0, 0, 0.5);
-  padding: 25px 0px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #fff;
 }

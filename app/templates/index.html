@@ -28,21 +28,11 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-
-
-
     <!--google fonts-->
-
-
-
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet"> -->
-
-
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 
     <!--font awesome-->
     <link rel="stylesheet" href="../static/css/font-awesome.css">
-
     <!--end font awesome-->
 
 
@@ -144,41 +134,21 @@
 
     <section class="interstellerarea">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-5 col-sm-6 col-xs-6">
-            <div class="interstellerarea">
-              <!--<h4>{{ '{{ moviectrl.movieOne.Title}}' }} ({{ '{{moviectrl.movieOne.Year}}' }}) <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></a></h4> -->
-              <ul>
-                <li type="button" class="picmovie btn btn-success" ng-click="moviectrl.pickMovie($event)" data-value="Mov1">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></li>
-                <li type="button" class="seenmovie btn btn-warning" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></li>
-                <!--<li class="infoimage hidden-sm hidden-xs" data-toggle="tooltip" title="{{movOneDesc}}"><a href=""><img src="../static/img/infoimage.png" class="img-responsive"></a></li>-->
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-sm-5 col-sm-6 col-xs-6">
-            <div class="bladerunnerarea">
-            <!--  <h4>{{ '{{ moviectrl.movieTwo.Title }}' }} ({{ '{{moviectrl.movieTwo.Year}}' }}) <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></a></h4>-->
-              <ul>
-                <li type="button" class="picmovie btn btn-success" ng-click="moviectrl.pickMovie($event)" data-value="Mov2">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></li>
-                <li type="button" class="seenmovie btn btn-warning" ng-click="moviectrl.changeMovieTwo()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></li>
-                <!--<li class="infoimage hidden-sm hidden-xs" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"><a href=""><img src="../static/img/infoimage.png" class="img-responsive"></a></li> -->
-              </ul>
-            </div>
-          </div>
-                <div class="col-sm-2"></div>
-        </div><!--end-->
-
+        <!--<h4>{{ '{{ moviectrl.movieOne.Title}}' }} ({{ '{{moviectrl.movieOne.Year}}' }}) <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></a></h4> -->
+        <!-- <h4>{{ '{{ moviectrl.movieTwo.Title }}' }} ({{ '{{moviectrl.movieTwo.Year}}' }}) <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></a></h4> -->
 
         <div class="row">
-          <div class="col-md-5 col-sm-6 col-xs-6">
+          <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-6">
+            <div class="btn-wrapper">
+              <button class="button-primary is-green" ng-click="moviectrl.pickMovie($event)" data-value="Mov1">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></button>
+              <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
+            </div>
             <div class="posterimage">
               <img src="../static/img/logan.jpg" alt="">
-              <div class="poster-title">
-                <a href="">Logan (2017)</a>
-              </div>
+              <div class="poster-title">Logan (2017)</div>
+
               <div class="poster-info">
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></i>
               </div>
               <!--<div class="interstellerimage">
                 <img class="img-responsive" alt="interstellar" ng-click="moviectrl.pickMovie($event)" data-value="Mov1"
@@ -187,14 +157,17 @@
             </div>
           </div>
 
-          <div class="col-md-5 col-sm-6 col-xs-6">
-            <div class="posterimage2">
+          <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-6">
+            <div class="btn-wrapper">
+              <button class="button-primary is-green" ng-click="moviectrl.pickMovie($event)" data-value="Mov2">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></button>
+              <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
+            </div>
+            <div class="posterimage">
               <img src="../static/img/ghost.jpg" alt="">
-              <div class="poster-title">
-                <a href="">Ghost in the shell (2017)</a>
+              <div class="poster-title">Ghost in the shell (2017)
               </div>
               <div class="poster-info">
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></i></a>
               </div>
               <!--<div class="bladeimage">
                 <img class="img-responsive" alt="bladeimage" ng-click="moviectrl.pickMovie($event)" data-value="Mov2"
@@ -202,26 +175,31 @@
               </div>-->
             </div>
           </div>
-                <div class="col-sm-2 hidden-sm hidden-xs">
-                    <div class="smallmovieimage">
-                        <div class="smallone">
-                          <!-- Remember set star according to ng-if="moviectrl.picked == 'Mov2'" -->
-                            <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieOne.Poster}}' }}_small.jpg" class="img-responsive">
-                        </div>
+          <div class="col-sm-2 hidden-sm hidden-xs">
+              <div class="smallmovieimage">
+                  <div class="smallone">
+                    <!-- Remember set star according to ng-if="moviectrl.picked == 'Mov2'" -->
+                    <img src="../static/img/logan.jpg" class="img-responsive">
+                    <!-- <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieOne.Poster}}' }}_small.jpg" class="img-responsive"> -->
+                  </div>
 
-                        <div class="ratings">
-                            <span class="roundpercent">{{ '{{moviectrl.pctMovieOne}}' }}%</span>
-                            <span class="ratinstext">rating<img src="../static/img/arrow.png" class="img-responsive"></span>
-                            <span class="roundpercent">{{ '{{moviectrl.pctMovieTwo}}' }}%</span>
-                        </div>
+                  <div class="ratings">
+                      <!-- <span class="roundpercent">{{ '{{moviectrl.pctMovieOne}}' }}%</span>
+                      <span class="ratinstext">rating<img src="../static/img/arrow.png" class="img-responsive"></span>
+                      <span class="roundpercent">{{ '{{moviectrl.pctMovieTwo}}' }}%</span> -->
+                      <span class="roundpercent">20%</span>
+                      <span class="ratinstext">rating<img src="../static/img/arrow.png" class="img-responsive"></span>
+                      <span class="roundpercent">80%</span>
+                  </div>
 
-                        <div class="smallone">
-                            <!-- Remember set star according to ng-if="moviectrl.picked != 'Mov2'" -->
-                            <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg"  class="img-responsive">
-                        </div>
+                  <div class="smallone">
+                      <!-- Remember set star according to ng-if="moviectrl.picked != 'Mov2'" -->
+                      <img src="../static/img/ghost.jpg" class="img-responsive">
+                      <!-- <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg"  class="img-responsive"> -->
+                  </div>
 
-                    </div>
-                </div>
+              </div>
+          </div>
         </div><!--end-->
 
 
