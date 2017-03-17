@@ -681,3 +681,23 @@ footer {
   .posterimage img {
     max-width: none;
     max-height: none; } }
+
+.table-wrap {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3); }
+  .table-wrap .table-head {
+    display: flex;
+    justify-content: flex-start; }
+    .table-wrap .table-head p {
+      color: #ffffff;
+      font-size: 20px; }
+    .table-wrap .table-head .is-green {
+      color: #91c532; }
+    .table-wrap .table-head :first-child {
+      margin-right: 10px; }
+    .table-wrap .table-head :last-child {
+      font-size: 11px;
+      color: #ffffff; }
+  .table-wrap .tableimage {
+    max-width: 75px;
+    max-height: 90px; }
