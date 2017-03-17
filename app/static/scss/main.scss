@@ -1,0 +1,10 @@
+// RESET/BASE CSS:
+@import "_old_styles";
+@import "layouts/_variables";
+@import "layouts/_helper-classes";
+// REUSABLE PART - LAYOUTS AND MODULES:
+@import "_base";
+@import "_modules";
+
+// PAGES BASED ON BODY CLASS:
+@import "pages/_main-page.scss";
