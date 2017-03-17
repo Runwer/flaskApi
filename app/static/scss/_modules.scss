@@ -68,14 +68,22 @@
           font-size: 16px;
           text-transform: uppercase;
           color: white;
+          transition: all 0.3s ease;
+              border-bottom: 2px solid rgba(161, 204, 64, 0);
           &:hover{
-            color:#fff;
+            color: #a1cc40;
+            border-bottom: 2px solid #a1cc40;
           }
         }
         &.actives a{
         	color: #a1cc40 !important;
         	border-bottom: 2px solid #a1cc40;
           font-weight: 500;
+        }
+        &.top{
+          background-color: rgba(161, 204, 64, 0.8);
+          border-bottom: none;
+          color: white;
         }
       }
     }
@@ -112,6 +120,7 @@
     border: none;
     box-shadow: none;
     &.is-green{
+      transition: 0.4s;
       background-color: #a1cc40;
       &:hover{
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
@@ -119,7 +128,8 @@
       }
     }
     &.is-yellow{
-    background-color: #f6a623;
+      transition: 0.4s;
+      background-color: #f6a623;
       &:hover{
         background-color: #ffca00;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);

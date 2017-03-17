@@ -526,13 +526,20 @@ p {
         padding: 37px 0px 40px;
         font-size: 16px;
         text-transform: uppercase;
-        color: white; }
+        color: white;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid rgba(161, 204, 64, 0); }
         .headerlogoarea .maincollapse ul li a:hover {
-          color: #fff; }
+          color: #a1cc40;
+          border-bottom: 2px solid #a1cc40; }
       .headerlogoarea .maincollapse ul li.actives a {
         color: #a1cc40 !important;
         border-bottom: 2px solid #a1cc40;
         font-weight: 500; }
+      .headerlogoarea .maincollapse ul li.top {
+        background-color: rgba(161, 204, 64, 0.8);
+        border-bottom: none;
+        color: white; }
   .headerlogoarea .social-head {
     width: 210px;
     color: #ffffff;
@@ -562,11 +569,13 @@ p {
   border: none;
   box-shadow: none; }
   .button-primary.is-green {
+    transition: 0.4s;
     background-color: #a1cc40; }
     .button-primary.is-green:hover {
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
       background-color: #b5e44a; }
   .button-primary.is-yellow {
+    transition: 0.4s;
     background-color: #f6a623; }
     .button-primary.is-yellow:hover {
       background-color: #ffca00;
