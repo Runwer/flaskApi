@@ -77,7 +77,7 @@
           font-weight: 500;
         }
         &.top a {
-          background-color: rgba(161, 204, 64, 0.8);
+          background-color: #a1cc40;
           border-bottom: none;
           color: white;
           padding-left: 20px;
@@ -86,6 +86,7 @@
           font-weight: 700;
           &:hover {
             color: white;
+            background-color: #b5e44a;
             border-bottom: 2px solid white;
           }
         }

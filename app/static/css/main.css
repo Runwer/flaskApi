@@ -534,7 +534,7 @@ p {
         border-bottom: 2px solid #a1cc40;
         font-weight: 500; }
       .headerlogoarea .maincollapse ul li.top a {
-        background-color: rgba(161, 204, 64, 0.8);
+        background-color: #a1cc40;
         border-bottom: none;
         color: white;
         padding-left: 20px;
@@ -543,6 +543,7 @@ p {
         font-weight: 700; }
         .headerlogoarea .maincollapse ul li.top a:hover {
           color: white;
+          background-color: #b5e44a;
           border-bottom: 2px solid white; }
     @media (max-width: 767px) {
       .headerlogoarea .maincollapse ul {
