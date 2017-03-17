@@ -1,5 +1,5 @@
 /* NAV-MENU */
-.headerlogoarea{
+.headerlogoarea {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   .mainavigation{
@@ -16,45 +16,41 @@
       }
     }
   }
-    .navbar-header{
-      width: 210px;
-      .logo{
-        padding-top: 7px;
-        .logomiddletext{
-          h3{
-            font-size: 15px;
-            text-transform: capitalize;
-            line-height: 1.2;
-            color: #ffffff;
-            font-weight: 400;
-            margin: 2.5px 0px;
-            span{
-              color: #91c532;
-            	font-weight: bold;
-            	display: inline-block;
-            }
+  .navbar-header{
+    width: 210px;
+    .logo{
+      padding-top: 7px;
+      .logomiddletext{
+        h3{
+          font-size: 15px;
+          text-transform: capitalize;
+          line-height: 1.2;
+          color: #ffffff;
+          font-weight: 400;
+          margin: 2.5px 0px;
+          span{
+            color: #91c532;
+          	font-weight: bold;
+          	display: inline-block;
           }
         }
-        img {
-          max-width: 177px;
-        }
-        @media (max-width: 767px) {
-          float: left;
-          padding: 5px 0px 5px 0px;
-        }
+      }
+      img {
+        max-width: 177px;
       }
       @media (max-width: 767px) {
-        width: auto;
-      }
-      @media (max-width: 767px) {
-        .navbar-toggle{
-          margin-right: 0px;
-        }
-      }
-      @media (max-width: 767px) {
-        padding: 10px 0px 10px 0px;
+        float: left;
+        padding: 5px 0px 5px 0px;
       }
     }
+    @media (max-width: 767px) {
+      padding: 10px 0px 10px 0px;
+      width: auto;
+      .navbar-toggle{
+        margin-right: 0px;
+      }
+    }
+  }
   .maincollapse{
     padding: 0;
     ul{
@@ -80,11 +76,23 @@
         	border-bottom: 2px solid #a1cc40;
           font-weight: 500;
         }
-        &.top{
+        &.top a {
           background-color: rgba(161, 204, 64, 0.8);
           border-bottom: none;
           color: white;
+          padding-left: 20px;
+          padding-right: 20px;
+          border-bottom: 2px solid rgba(161, 204, 64, 0);
+          font-weight: 700;
+          &:hover {
+            color: white;
+            border-bottom: 2px solid white;
+          }
         }
+      }
+
+      @media (max-width: 767px) {
+        margin: 0;
       }
     }
   }
@@ -105,9 +113,6 @@
     @media (max-width: 767px) {
       display: none;
     }
-  }
-  @media (max-width: 767px) {
-    margin-bottom: 80px;
   }
 }
 /* BUTTON */

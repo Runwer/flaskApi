@@ -509,13 +509,10 @@ p {
           padding: 5px 0px 5px 0px; } }
     @media (max-width: 767px) {
       .headerlogoarea .navbar-header {
-        width: auto; } }
-    @media (max-width: 767px) {
-      .headerlogoarea .navbar-header .navbar-toggle {
-        margin-right: 0px; } }
-    @media (max-width: 767px) {
-      .headerlogoarea .navbar-header {
-        padding: 10px 0px 10px 0px; } }
+        padding: 10px 0px 10px 0px;
+        width: auto; }
+        .headerlogoarea .navbar-header .navbar-toggle {
+          margin-right: 0px; } }
   .headerlogoarea .maincollapse {
     padding: 0; }
     .headerlogoarea .maincollapse ul li {
@@ -536,10 +533,20 @@ p {
         color: #a1cc40 !important;
         border-bottom: 2px solid #a1cc40;
         font-weight: 500; }
-      .headerlogoarea .maincollapse ul li.top {
+      .headerlogoarea .maincollapse ul li.top a {
         background-color: rgba(161, 204, 64, 0.8);
         border-bottom: none;
-        color: white; }
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: 2px solid rgba(161, 204, 64, 0);
+        font-weight: 700; }
+        .headerlogoarea .maincollapse ul li.top a:hover {
+          color: white;
+          border-bottom: 2px solid white; }
+    @media (max-width: 767px) {
+      .headerlogoarea .maincollapse ul {
+        margin: 0; } }
   .headerlogoarea .social-head {
     width: 210px;
     color: #ffffff;
@@ -555,9 +562,6 @@ p {
     @media (max-width: 767px) {
       .headerlogoarea .social-head {
         display: none; } }
-  @media (max-width: 767px) {
-    .headerlogoarea {
-      margin-bottom: 80px; } }
 
 /* BUTTON */
 .button-primary {
