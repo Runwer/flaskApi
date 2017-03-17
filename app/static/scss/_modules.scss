@@ -104,11 +104,14 @@
     text-align: right;
     a{
       color: #fff;
-    i:first-child{
+    }
+    a:first-child{
       margin-right: 15px;
-      }
     }
     @media (max-width: 991px) {
+      display: none;
+    }
+    @media (max-width: 1199px) {
       width: auto;
     }
     @media (max-width: 767px) {
@@ -174,9 +177,9 @@ footer{
     justify-content: center;
       a{
         color:#fff;
-      i:first-child{
-        margin-right: 15px;
-      }
+    }
+    a:first-child {
+      margin-right: 15px;
     }
   }
 }

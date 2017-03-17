@@ -555,9 +555,12 @@ p {
     text-align: right; }
     .headerlogoarea .social-head a {
       color: #fff; }
-      .headerlogoarea .social-head a i:first-child {
-        margin-right: 15px; }
+    .headerlogoarea .social-head a:first-child {
+      margin-right: 15px; }
     @media (max-width: 991px) {
+      .headerlogoarea .social-head {
+        display: none; } }
+    @media (max-width: 1199px) {
       .headerlogoarea .social-head {
         width: auto; } }
     @media (max-width: 767px) {
@@ -609,8 +612,8 @@ footer {
     justify-content: center; }
     footer .social-footer a {
       color: #fff; }
-      footer .social-footer a i:first-child {
-        margin-right: 15px; }
+    footer .social-footer a:first-child {
+      margin-right: 15px; }
 
 .btn-wrapper {
   margin-bottom: 25px;
