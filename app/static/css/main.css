@@ -592,6 +592,10 @@ footer {
       color: #fff; }
     footer .social-footer a:first-child {
       margin-right: 15px; }
+  @media (max-width: 767px) {
+    footer .special-flex {
+      justify-content: center;
+      display: flex; } }
 
 .btn-wrapper {
   margin-bottom: 25px;
