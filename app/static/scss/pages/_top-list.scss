@@ -61,6 +61,12 @@
       max-width: 95px;
       max-height: 115px;
     }
+    span{
+    max-width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    }
   }
   .startimage{
     display: flex;

@@ -723,6 +723,11 @@ footer {
   .table-wrap .tableimage img {
     max-width: 95px;
     max-height: 115px; }
+  .table-wrap .tableimage span {
+    max-width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; }
   .table-wrap .startimage {
     display: flex;
     justify-content: flex-start; }
