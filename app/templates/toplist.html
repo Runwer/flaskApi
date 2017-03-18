@@ -40,7 +40,8 @@
 
 
 
-<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet"> -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 
 
 
@@ -170,7 +171,7 @@
         			<div class="col-xs-12 col-lg-10 col-lg-offset-1">
 								<div class="table-wrap">
         				<div class="table-responsive tabletopmovies">
-									<div class="table-head">
+									<div class="table-head clearfix">
 										<p>Top Raited Movies</p>
 										<p class="is-green">Your top 25</p>
 										<a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i>Share on facebook</a>
@@ -179,13 +180,13 @@
         						<tr class="titletr">
         							<th>Rank</th>
         							<th>poster & title</th>
-        							<th class="text-center vote"><i class="fa fa-long-arrow-up" aria-hidden="true"></i>vote percentage</th>
-        							<th class="text-center">Global Rank</th>
+        							<th class="vote"><i class="fa fa-long-arrow-up" aria-hidden="true"></i>vote percentage</th>
+        							<th class="">Global Rank</th>
         						</tr>
 								<!--{% for movs in movlist %} -->
         						<tr class="tablerowtow">
         							<td>{{ loop.index }}1</td>
-									<td class="tableimage">
+											<td class="tableimage">
 												<img src="../static/img/logan.jpg" alt="poster">
 												<span>logan(2017)</span>
         								<img ng-src="../static/posters/{{movs.Poster}}Table.jpg" class="img-responsive">
@@ -201,7 +202,7 @@
         						</tr>
 										<tr class="tablerowtow">
         							<td>{{ loop.index }}2</td>
-									<td class="tableimage">
+											<td class="tableimage">
 												<img src="../static/img/ghost.jpg" alt="poster">
 												<span>Ghost in the shell(2017)</span>
         								<img ng-src="../static/posters/{{movs.Poster}}Table.jpg" class="img-responsive">

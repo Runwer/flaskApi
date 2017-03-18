@@ -187,16 +187,6 @@ TOP MOVIES PAGE STYLING
   font-weight: 400;
   font-size: 13px; }
 
-.percentage {
-  font-size: 13px;
-  font-weight: 300;
-  display: block;
-  text-align: center; }
-
-.startimage img {
-  display: block;
-  text-align: center; }
-
 /**********Responsive style****************/
 @media (max-width: 1200px) {
   .interstellerarea ul li {
@@ -688,21 +678,31 @@ footer {
     max-height: none; } }
 
 .table-wrap {
-  background-color: rgba(255, 255, 255, 0.3); }
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 3px; }
   .table-wrap .titletr {
     border-bottom: 0.5px solid rgba(151, 151, 151, 0.57);
     font-size: 12px; }
     .table-wrap .titletr i {
       margin-right: 10px; }
+    .table-wrap .titletr > th {
+      font-size: 12px;
+      font-weight: 500; }
+      .table-wrap .titletr > th:first-child {
+        padding-left: 30px; }
   .table-wrap .tablerowtow {
-    font-size: 13px;
     border-bottom: 0.5px solid rgba(151, 151, 151, 0.57); }
+    .table-wrap .tablerowtow > td {
+      font-size: 13px; }
+      .table-wrap .tablerowtow > td:first-child {
+        padding-left: 30px; }
   .table-wrap .vote {
     color: #91c532; }
   .table-wrap .table-head {
-    padding: 20px;
-    display: flex;
-    justify-content: flex-start; }
+    padding: 20px 14px; }
+    .table-wrap .table-head > * {
+      float: left; }
     .table-wrap .table-head p {
       color: #ffffff;
       font-size: 20px; }
@@ -712,13 +712,20 @@ footer {
       margin-right: 10px; }
     .table-wrap .table-head :last-child {
       font-size: 11px;
-      color: #ffffff; }
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      float: right; }
+      .table-wrap .table-head :last-child > i {
+        font-size: 12px;
+        position: relative;
+        top: -1px; }
   .table-wrap .tableimage img {
-    max-width: 75px;
-    max-height: 85px; }
+    max-width: 95px;
+    max-height: 115px; }
   .table-wrap .startimage {
     display: flex;
-    justify-content: center; }
+    justify-content: flex-start; }
     .table-wrap .startimage span {
       margin-right: 10px; }
   .table-wrap .sortby {
@@ -735,8 +742,10 @@ footer {
       color: rgba(255, 255, 255, 0.53); }
     .table-wrap .sortby a {
       color: #ffffff; }
-      .table-wrap .sortby a :first-child {
-        margin-right: 50px; }
+    .table-wrap .sortby .fa-chevron-left {
+      margin-right: 40px; }
+    .table-wrap .sortby .fa-chevron-right {
+      margin-right: 20px; }
 
 /* MEDIA MODULES */
 @media (max-width: 767px) {
