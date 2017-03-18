@@ -73,12 +73,6 @@
   }
 }
 @media (max-width: 767px) {
-  .poster-title{
-
-  }
-  .poster-info{
-
-  }
   .posterimage img{
   max-width: 344px;
   }
@@ -98,5 +92,11 @@
   .posterimage img{
     max-width: none;
     max-height: none;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 767px) {
+  .posterimage img {
+    margin-top: 80px;
   }
 }
