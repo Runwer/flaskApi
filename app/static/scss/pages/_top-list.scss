@@ -62,6 +62,10 @@
       max-height: 115px;
     }
     span{
+    text-transform: capitalize;
+    color: #fefefe;
+    font-weight: 400;
+    font-size: 13px;
     max-width: 250px;
     text-overflow: ellipsis;
     overflow: hidden;

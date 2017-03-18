@@ -181,12 +181,6 @@ TOP MOVIES PAGE STYLING
 .tableimage img {
   margin-right: 15px; }
 
-.tableimage span {
-  text-transform: capitalize;
-  color: #fefefe;
-  font-weight: 400;
-  font-size: 13px; }
-
 /**********Responsive style****************/
 @media (max-width: 1200px) {
   .interstellerarea ul li {
@@ -724,6 +718,10 @@ footer {
     max-width: 95px;
     max-height: 115px; }
   .table-wrap .tableimage span {
+    text-transform: capitalize;
+    color: #fefefe;
+    font-weight: 400;
+    font-size: 13px;
     max-width: 250px;
     text-overflow: ellipsis;
     overflow: hidden;
