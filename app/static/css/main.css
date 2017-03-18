@@ -159,6 +159,7 @@ TOP MOVIES PAGE STYLING
   text-align: right; }
 
 .sortby select {
+  border: none;
   background: transparent;
   padding: 3px;
   border-radius: 2px; }
@@ -174,10 +175,6 @@ TOP MOVIES PAGE STYLING
 .tabletopmovies tr td {
   border: none !important; }
 
-.titletr {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 20px; }
-
 .tableimage {
   display: flex; }
 
@@ -186,20 +183,17 @@ TOP MOVIES PAGE STYLING
 
 .tableimage span {
   text-transform: capitalize;
-  position: relative;
-  top: 14px;
   color: #fefefe;
-  font-weight: 600;
-  font-size: 16px; }
+  font-weight: 400;
+  font-size: 13px; }
 
 .percentage {
+  font-size: 13px;
   font-weight: 300;
   display: block;
-  text-align: center;
-  margin-top: 15px; }
+  text-align: center; }
 
 .startimage img {
-  margin: 0px auto;
   display: block;
   text-align: center; }
 
@@ -694,9 +688,19 @@ footer {
     max-height: none; } }
 
 .table-wrap {
-  padding: 20px;
   background-color: rgba(255, 255, 255, 0.3); }
+  .table-wrap .titletr {
+    border-bottom: 0.5px solid rgba(151, 151, 151, 0.57);
+    font-size: 12px; }
+    .table-wrap .titletr i {
+      margin-right: 10px; }
+  .table-wrap .tablerowtow {
+    font-size: 13px;
+    border-bottom: 0.5px solid rgba(151, 151, 151, 0.57); }
+  .table-wrap .vote {
+    color: #91c532; }
   .table-wrap .table-head {
+    padding: 20px;
     display: flex;
     justify-content: flex-start; }
     .table-wrap .table-head p {
@@ -709,6 +713,41 @@ footer {
     .table-wrap .table-head :last-child {
       font-size: 11px;
       color: #ffffff; }
-  .table-wrap .tableimage {
+  .table-wrap .tableimage img {
     max-width: 75px;
-    max-height: 90px; }
+    max-height: 85px; }
+  .table-wrap .startimage {
+    display: flex;
+    justify-content: center; }
+    .table-wrap .startimage span {
+      margin-right: 10px; }
+  .table-wrap .sortby {
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline; }
+    .table-wrap .sortby select {
+      margin: 0px 20px 0px 15px;
+      color: rgba(255, 255, 255, 0.53); }
+    .table-wrap .sortby p {
+      margin-right: 40px;
+      color: rgba(255, 255, 255, 0.53); }
+    .table-wrap .sortby a {
+      color: #ffffff; }
+      .table-wrap .sortby a :first-child {
+        margin-right: 50px; }
+
+/* MEDIA MODULES */
+@media (max-width: 767px) {
+  .table-responsive {
+    border: none; } }
+
+@media (max-width: 550px) {
+  .tableimage {
+    text-align: center; }
+    .tableimage img {
+      max-width: none !important;
+      max-height: none !important; }
+  .sortby {
+    display: block !important; } }
