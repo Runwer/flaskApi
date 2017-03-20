@@ -25,7 +25,6 @@ Author URI: http://www.themezwarrior.com
 	color: #7b7b7b;
 	text-transform: capitalize;
 }
-.htoprightmenu{}
 .htoprightmenu ul{
 	text-align: right;
 }
@@ -172,6 +171,7 @@ TOP MOVIES PAGE STYLING
 	text-align: right;
 }
 .sortby select {
+		border: none;
     background: transparent;
     padding: 3px;
     border-radius: 2px;
@@ -189,40 +189,12 @@ TOP MOVIES PAGE STYLING
 .tabletopmovies tr td{
 	border:none!important;
 }
-.titletr{
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 20px;
-}
 .tableimage{
 	display: flex;
 }
 .tableimage img{
 	margin-right:15px;
 }
-.tableimage span {
-	text-transform: capitalize;
-    position: relative;
-    top: 14px;
-    color: #fefefe;
-    font-weight: 600;
-    font-size: 16px;
-}
-.percentage{
-	font-weight: 300;
-	display: block;
-	text-align: center;
-	margin-top:15px;
-
-}
-.startimage{}
-.startimage img{
-	margin:0px auto;
-	display: block;
-	text-align: center;
-}
-
-
-
 /**********Responsive style****************/
 @media (max-width: 1200px) {
 	.interstellerarea ul li{

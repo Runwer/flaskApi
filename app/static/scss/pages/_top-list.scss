@@ -1,0 +1,124 @@
+.table-wrap{
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 3px;
+  .titletr {
+    border-bottom: 0.5px solid rgba(151, 151, 151, 0.57);
+    font-size: 12px;
+    i{
+      margin-right: 10px;
+    }
+    > th {
+      font-size: 12px;
+      font-weight: 500;
+      &:first-child {
+        padding-left: 30px;
+      }
+    }
+  }
+  .tablerowtow{
+    border-bottom: 0.5px solid rgba(151, 151, 151, 0.57);
+    > td {
+      font-size: 13px;
+      &:first-child {
+        padding-left: 30px;
+      }
+    }
+  }
+  .vote{
+    color:#91c532;
+  }
+  .table-head{
+    padding: 20px 14px;
+      > * {
+        float: left;
+      }
+      p{
+        color: #ffffff;
+        font-size: 20px;
+      }
+      .is-green{
+        color:#91c532;
+      }
+      :first-child{
+        margin-right: 10px;
+      }
+      :last-child{
+        font-size: 11px;
+        color:#ffffff;
+        display: inline-flex;
+        align-items: center;
+        float: right;
+        > i {
+          font-size: 12px;
+          position: relative;
+          top: -1px;
+        }
+      }
+  }
+  .tableimage{
+    img{
+      max-width: 95px;
+      max-height: 115px;
+    }
+    span{
+    text-transform: capitalize;
+    color: #fefefe;
+    font-weight: 400;
+    font-size: 13px;
+    max-width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    }
+  }
+  .startimage{
+    display: flex;
+    justify-content: flex-start;
+    span{
+      margin-right: 10px;
+    }
+  }
+  .sortby{
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+      select{
+        margin: 0px 20px 0px 15px;
+        color: rgba(255, 255, 255, 0.53);
+      }
+      p{
+        margin-right: 40px;
+        color: rgba(255, 255, 255, 0.53);
+      }
+      a{
+        color:#ffffff;
+      }
+      .fa-chevron-left {
+        margin-right: 40px;
+      }
+      .fa-chevron-right {
+        margin-right: 20px;
+      }
+  }
+}
+/* MEDIA MODULES */
+@media (max-width: 767px) {
+  .table-responsive {
+  border: none;
+  }
+}
+@media (max-width: 550px) {
+  .tableimage {
+  text-align: center;
+    img{
+      max-width: none !important;
+      max-height: none !important;
+    }
+  }
+  .sortby{
+    display: block !important;
+  }
+}

@@ -74,9 +74,10 @@
 				</div>
 			</div>
 		</div>
-  <!--end-->
+  <!-end-->
         <div class="headerlogoarea">
         	<div class="container">
+            <div class="row">
         			<div class="col-sm-12 col-md-12 col-xs-12">
                 <nav class="mainavigation navbar navbar-default">
         		  <div class=" maincontainer">
@@ -119,7 +120,8 @@
               </div>
         		  </div><!-- /.container-fluid -->
         		</nav>
-        			</div>
+        		</div>
+              </div>
         				<!--<div class="socialicon">
         					<ul>
         						<li><a href=""><img src="../static/img/fb.png" class="img-responsive" alt="fb"></a></li>
@@ -144,11 +146,16 @@
               <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
             </div>
             <div class="posterimage">
-              <img src="../static/img/logan.jpg" alt="">
+              <img src="../static/img/logan.jpg" alt="poster">
               <div class="poster-title">Logan (2017)</div>
 
               <div class="poster-info">
                 <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></i>
+              </div>
+
+              <div class="versus-icon">
+                <!-- <img src="http://www.ufc-mania.ru/img/versus-icon.png" /> -->
+                <img src="../static/img/ic_movie_white.svg" />
               </div>
               <!--<div class="interstellerimage">
                 <img class="img-responsive" alt="interstellar" ng-click="moviectrl.pickMovie($event)" data-value="Mov1"
@@ -163,11 +170,11 @@
               <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
             </div>
             <div class="posterimage">
-              <img src="../static/img/ghost.jpg" alt="">
+              <img src="../static/img/ghost.jpg" alt="poster">
               <div class="poster-title">Ghost in the shell (2017)
               </div>
               <div class="poster-info">
-                <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></i></a>
+                <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></i>
               </div>
               <!--<div class="bladeimage">
                 <img class="img-responsive" alt="bladeimage" ng-click="moviectrl.pickMovie($event)" data-value="Mov2"
@@ -179,7 +186,7 @@
               <div class="smallmovieimage">
                   <div class="smallone">
                     <!-- Remember set star according to ng-if="moviectrl.picked == 'Mov2'" -->
-                    <img src="../static/img/logan.jpg" class="img-responsive">
+                    <img src="../static/img/logan.jpg" alt="poster" class="img-responsive">
                     <!-- <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieOne.Poster}}' }}_small.jpg" class="img-responsive"> -->
                   </div>
 
@@ -188,13 +195,13 @@
                       <span class="ratinstext">rating<img src="../static/img/arrow.png" class="img-responsive"></span>
                       <span class="roundpercent">{{ '{{moviectrl.pctMovieTwo}}' }}%</span> -->
                       <span class="roundpercent">20%</span>
-                      <span class="ratinstext">rating<img src="../static/img/arrow.png" class="img-responsive"></span>
+                      <span class="ratinstext">rating<img src="../static/img/arrow.png" alt="arrow" class="img-responsive"></span>
                       <span class="roundpercent">80%</span>
                   </div>
 
                   <div class="smallone">
                       <!-- Remember set star according to ng-if="moviectrl.picked != 'Mov2'" -->
-                      <img src="../static/img/ghost.jpg" class="img-responsive">
+                      <img src="../static/img/ghost.jpg" alt="poster" class="img-responsive">
                       <!-- <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg"  class="img-responsive"> -->
                   </div>
 
@@ -210,10 +217,11 @@
 
     <footer>
       <div class="container">
-        <div class="col-sm-4">
-          <div class="copyright">
-            <p>fliqpick.com copyright 2017</p>
-          </div>
+        <div class="row special-flex">
+          <div class="col-sm-4">
+            <div class="copyright">
+              <p>fliqpick.com copyright 2017</p>
+            </div>
         </div>
         <div class="col-sm-4">
           <div class="social-footer">
@@ -227,7 +235,8 @@
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
     <!-- script here -->
 

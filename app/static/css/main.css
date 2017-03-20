@@ -159,6 +159,7 @@ TOP MOVIES PAGE STYLING
   text-align: right; }
 
 .sortby select {
+  border: none;
   background: transparent;
   padding: 3px;
   border-radius: 2px; }
@@ -174,34 +175,11 @@ TOP MOVIES PAGE STYLING
 .tabletopmovies tr td {
   border: none !important; }
 
-.titletr {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 20px; }
-
 .tableimage {
   display: flex; }
 
 .tableimage img {
   margin-right: 15px; }
-
-.tableimage span {
-  text-transform: capitalize;
-  position: relative;
-  top: 14px;
-  color: #fefefe;
-  font-weight: 600;
-  font-size: 16px; }
-
-.percentage {
-  font-weight: 300;
-  display: block;
-  text-align: center;
-  margin-top: 15px; }
-
-.startimage img {
-  margin: 0px auto;
-  display: block;
-  text-align: center; }
 
 /**********Responsive style****************/
 @media (max-width: 1200px) {
@@ -614,6 +592,10 @@ footer {
       color: #fff; }
     footer .social-footer a:first-child {
       margin-right: 15px; }
+  @media (max-width: 767px) {
+    footer .special-flex {
+      justify-content: center;
+      display: flex; } }
 
 .btn-wrapper {
   margin-bottom: 25px;
@@ -649,7 +631,8 @@ footer {
     align-items: center;
     width: 40px;
     height: 40px;
-    background-color: #d0011b;
+    background-color: rgba(159, 159, 159, 0.6);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     float: right; }
   .posterimage .poster-info i {
@@ -658,6 +641,16 @@ footer {
     max-width: 100%;
     width: 100%;
     max-height: 530px; }
+  .posterimage .versus-icon {
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(100% + 23px); }
+    .posterimage .versus-icon img {
+      width: 80px;
+      max-width: none; }
+    @media (max-width: 1199px) {
+      .posterimage .versus-icon {
+        display: none; } }
 
 @media (max-width: 991px) and (min-width: 768px) {
   .posterimage img {
@@ -681,3 +674,100 @@ footer {
   .posterimage img {
     max-width: none;
     max-height: none; } }
+
+@media (min-width: 500px) and (max-width: 767px) {
+  .posterimage img {
+    margin-top: 80px; } }
+
+.table-wrap {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 3px; }
+  .table-wrap .titletr {
+    border-bottom: 0.5px solid rgba(151, 151, 151, 0.57);
+    font-size: 12px; }
+    .table-wrap .titletr i {
+      margin-right: 10px; }
+    .table-wrap .titletr > th {
+      font-size: 12px;
+      font-weight: 500; }
+      .table-wrap .titletr > th:first-child {
+        padding-left: 30px; }
+  .table-wrap .tablerowtow {
+    border-bottom: 0.5px solid rgba(151, 151, 151, 0.57); }
+    .table-wrap .tablerowtow > td {
+      font-size: 13px; }
+      .table-wrap .tablerowtow > td:first-child {
+        padding-left: 30px; }
+  .table-wrap .vote {
+    color: #91c532; }
+  .table-wrap .table-head {
+    padding: 20px 14px; }
+    .table-wrap .table-head > * {
+      float: left; }
+    .table-wrap .table-head p {
+      color: #ffffff;
+      font-size: 20px; }
+    .table-wrap .table-head .is-green {
+      color: #91c532; }
+    .table-wrap .table-head :first-child {
+      margin-right: 10px; }
+    .table-wrap .table-head :last-child {
+      font-size: 11px;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      float: right; }
+      .table-wrap .table-head :last-child > i {
+        font-size: 12px;
+        position: relative;
+        top: -1px; }
+  .table-wrap .tableimage img {
+    max-width: 95px;
+    max-height: 115px; }
+  .table-wrap .tableimage span {
+    text-transform: capitalize;
+    color: #fefefe;
+    font-weight: 400;
+    font-size: 13px;
+    max-width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; }
+  .table-wrap .startimage {
+    display: flex;
+    justify-content: flex-start; }
+    .table-wrap .startimage span {
+      margin-right: 10px; }
+  .table-wrap .sortby {
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline; }
+    .table-wrap .sortby select {
+      margin: 0px 20px 0px 15px;
+      color: rgba(255, 255, 255, 0.53); }
+    .table-wrap .sortby p {
+      margin-right: 40px;
+      color: rgba(255, 255, 255, 0.53); }
+    .table-wrap .sortby a {
+      color: #ffffff; }
+    .table-wrap .sortby .fa-chevron-left {
+      margin-right: 40px; }
+    .table-wrap .sortby .fa-chevron-right {
+      margin-right: 20px; }
+
+/* MEDIA MODULES */
+@media (max-width: 767px) {
+  .table-responsive {
+    border: none; } }
+
+@media (max-width: 550px) {
+  .tableimage {
+    text-align: center; }
+    .tableimage img {
+      max-width: none !important;
+      max-height: none !important; }
+  .sortby {
+    display: block !important; } }
