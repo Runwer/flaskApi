@@ -12,10 +12,8 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-93764600-1', 'auto');
       ga('send', 'pageview');
-
     </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,9 +39,9 @@
     <link rel="stylesheet" href="../static/css/main.css">
     <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"> -->
     <script src="../static/js/vendor/modernizr-2.6.2.min.js"></script>
-    <!-- <script src="../static/js/angular.min.js"></script>
+    <script src="../static/js/angular.min.js"></script>
     <script src="../static/js/app.js"></script>
-    <script src="../static/js/angular-cookies.min.js"></script> -->
+    <script src="../static/js/angular-cookies.min.js"></script>
     <!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -106,16 +104,15 @@
         				<li class="actives"><a href="index.html">Home</a></li>
         				<li><a href="#">about</a></li>
         				<li><a href="#">contact</a></li>
-                <li class="top"><a href="#">go to your top list</a></li>
+                <li class="top"><a href="toplist.html">go to your top list</a></li>
         			  </ul>
 
         			  <!--<ul class="rightnavbar nav navbar-nav navbar-right">
         				<li><a href="toplist.html">go to your top list</a></li>
-
               </ul> -->
         			</div><!-- /.navbar-collapse -->
               <div class="social-head">
-              <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <!--<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>-->
               <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
               </div>
         		  </div><!-- /.container-fluid -->
@@ -136,18 +133,19 @@
 
     <section class="interstellerarea">
       <div class="container">
-        <!--<h4>{{ '{{ moviectrl.movieOne.Title}}' }} ({{ '{{moviectrl.movieOne.Year}}' }}) <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></a></h4> -->
-        <!-- <h4>{{ '{{ moviectrl.movieTwo.Title }}' }} ({{ '{{moviectrl.movieTwo.Year}}' }}) <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></a></h4> -->
+        <!--<h4>) <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title=""></a></h4> -->
+        <!-- <h4> <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="' }}"></a></h4> -->
 
         <div class="row">
-          <div class="col-md-5 col-lg-4 col-lg-offset-1  col-sm-6 col-xs-12">
+          <div class="col-md-5 col-lg-4 col-sm-6 col-xs-12">
             <div class="btn-wrapper">
               <button class="button-primary is-green" ng-click="moviectrl.pickMovie($event)" data-value="Mov1">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></button>
               <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
             </div>
             <div class="posterimage">
-              <img src="../static/img/logan.jpg" alt="poster">
-              <div class="poster-title">Logan (2017)</div>
+              <img ng-click="moviectrl.pickMovie($event)" data-value="Mov1"
+                              ng-src="/static/posters/{{ '{{ moviectrl.movieOne.Poster}}' }}.jpg" alt="poster">
+              <div class="poster-title">{{ '{{ moviectrl.movieOne.Title}}' }} ({{ '{{moviectrl.movieOne.Year}}' }})</div>
 
               <div class="poster-info">
                 <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></i>
@@ -158,8 +156,7 @@
                 <img src="../static/img/ic_movie_white.svg" />
               </div>
               <!--<div class="interstellerimage">
-                <img class="img-responsive" alt="interstellar" ng-click="moviectrl.pickMovie($event)" data-value="Mov1"
-                              ng-src="/static/posters/{{ '{{ moviectrl.movieOne.Poster}}' }}.jpg">
+                <img class="img-responsive" alt="interstellar" >
               </div>-->
             </div>
           </div>
@@ -167,27 +164,29 @@
           <div class="col-md-5 col-lg-4 col-lg-offset-1  col-sm-6 col-xs-12">
             <div class="btn-wrapper">
               <button class="button-primary is-green" ng-click="moviectrl.pickMovie($event)" data-value="Mov2">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></button>
-              <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
+              <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieTwo()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
             </div>
             <div class="posterimage">
-              <img src="../static/img/ghost.jpg" alt="poster">
-              <div class="poster-title">Ghost in the shell (2017)
+              <img ng-click="moviectrl.pickMovie($event)" data-value="Mov2"
+                          ng-src="/static/posters/{{ '{{moviectrl.movieTwo.Poster}}' }}.jpg" alt="poster">
+              <div class="poster-title">{{ '{{ moviectrl.movieTwo.Title }}' }} ({{ '{{moviectrl.movieTwo.Year}}' }})
               </div>
               <div class="poster-info">
                 <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></i>
               </div>
               <!--<div class="bladeimage">
                 <img class="img-responsive" alt="bladeimage" ng-click="moviectrl.pickMovie($event)" data-value="Mov2"
-                          ng-src="/static/posters/{{ '{{moviectrl.movieTwo.Poster}}' }}.jpg">
+                          ng-src="/static/posters/' }}.jpg">
               </div>-->
             </div>
           </div>
-          <div class="col-sm-2 col-md-2 col-lg-2 hidden-sm hidden-xs">
+          <div class="col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 hidden-sm hidden-xs">
+              {% if '{{moviectrl.oldMovieOne.Poster}}'|length >5 %}
               <div class="smallmovieimage">
                   <div class="smallone">
                     <!-- Remember set star according to ng-if="moviectrl.picked == 'Mov2'" -->
-                    <img src="../static/img/logan.jpg" alt="poster" class="img-responsive">
-                    <!-- <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieOne.Poster}}' }}_small.jpg" class="img-responsive"> -->
+                    <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieOne.Poster}}' }}_small.jpg" alt="poster" class="img-responsive">
+                    <!-- <img ng-src="/static/posters/_small.jpg" class="img-responsive"> -->
                   </div>
 
                   <div class="ratings">
@@ -201,11 +200,14 @@
 
                   <div class="smallone">
                       <!-- Remember set star according to ng-if="moviectrl.picked != 'Mov2'" -->
-                      <img src="../static/img/ghost.jpg" alt="poster" class="img-responsive">
+                      <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg" alt="poster" class="img-responsive">
                       <!-- <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg"  class="img-responsive"> -->
                   </div>
 
               </div>
+              {% else %}
+
+              {% endif %}
           </div>
         </div><!--end-->
 
@@ -217,6 +219,7 @@
 
     <footer>
       <div class="container">
+
         <div class="row special-flex">
           <div class="col-sm-4">
             <div class="copyright">
@@ -244,7 +247,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
        <script>
-
      $(document).ready(function(){
       $('.searchbox i').click(function(){
         $('.searchbox input').toggle();

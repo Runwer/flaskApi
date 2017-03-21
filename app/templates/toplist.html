@@ -174,7 +174,7 @@
 								<div class="table-wrap">
         				<div class="table-responsive tabletopmovies">
 									<div class="table-head clearfix">
-										<p>Top Raited Movies</p>
+										<p>Top Rated Movies</p>
 										<p class="is-green">Your top 25</p>
 										<a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i>Share on facebook</a>
 									</div>
@@ -187,14 +187,13 @@
         						</tr>
 								<!--{% for movs in movlist %} -->
         						<tr class="tablerowtow">
-        							<td>{{ loop.index }}1</td>
+        							<td>{{ loop.index }}</td>
 											<td class="tableimage">
-												<img src="../static/img/logan.jpg" alt="poster">
-												<span>logan(2017)</span>
+
         								<img ng-src="../static/posters/{{movs.Poster}}Table.jpg" class="img-responsive">
         								<span>{{movs.Title}}</span>
         							</td>
-        							<td><span class="percentage">{{movs.winpct}}73.9%</span></td>
+        							<td><span class="percentage">{{movs.winpct}}%</span></td>
         							<td>
         								<div class="startimage">
 													<span>4</span>
@@ -202,22 +201,7 @@
         								</div>
         							</td>
         						</tr>
-										<tr class="tablerowtow">
-        							<td>{{ loop.index }}2</td>
-											<td class="tableimage">
-												<img src="../static/img/ghost.jpg" alt="poster">
-												<span>Ghost in the shell(2017)</span>
-        								<img ng-src="../static/posters/{{movs.Poster}}Table.jpg" class="img-responsive">
-        								<span>{{movs.Title}}</span>
-        							</td>
-        							<td><span class="percentage">{{movs.winpct}}46.6%</span></td>
-        							<td>
-        								<div class="startimage">
-													<span>5</span>
-        									<img src="../static/img/star.png" class="img-responsive">
-        								</div>
-        							</td>
-        						</tr>
+
 							<!--	{% endfor %} -->
         						</table>
         					</div>
