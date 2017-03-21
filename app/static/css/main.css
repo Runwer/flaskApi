@@ -547,19 +547,22 @@ p {
 
 /* BUTTON */
 .button-primary {
-  padding: 10px 40px 10px 20px;
+  padding: 10px 20px 10px 20px;
   position: relative;
   border-radius: 40px;
   color: white;
   outline: none;
   border: none;
-  box-shadow: none; }
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center; }
   .button-primary.is-green {
     transition: 0.4s;
     background-color: #a1cc40; }
     .button-primary.is-green:hover {
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-      background-color: #b5e44a; }
+      background-color: #b5e44a;
+      color: white; }
   .button-primary.is-yellow {
     transition: 0.4s;
     background-color: #f6a623; }
@@ -567,9 +570,7 @@ p {
       background-color: #ffca00;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); }
   .button-primary i {
-    position: absolute;
-    top: 10px;
-    right: 15px;
+    margin-left: 10px;
     font-size: 18px; }
 
 /* FOOTER */
@@ -603,9 +604,14 @@ footer {
   justify-content: space-between; }
 
 .posterimage {
-  position: relative; }
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 1px 5px 30px rgba(255, 255, 255, 0); }
   .posterimage .posterimage img, .posterimage .posterimage2 img {
     height: 100%; }
+  .posterimage:hover {
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.05); }
   .posterimage .poster-title {
     max-width: 70%;
     text-overflow: ellipsis;
@@ -651,6 +657,8 @@ footer {
     @media (max-width: 1199px) {
       .posterimage .versus-icon {
         display: none; } }
+    .posterimage .versus-icon:hover {
+      cursor: auto; }
 
 @media (max-width: 991px) and (min-width: 768px) {
   .posterimage img {
@@ -702,26 +710,18 @@ footer {
   .table-wrap .vote {
     color: #91c532; }
   .table-wrap .table-head {
-    padding: 20px 14px; }
+    padding: 20px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
     .table-wrap .table-head > * {
-      float: left; }
+      float: left;
+      margin: 0px; }
     .table-wrap .table-head p {
       color: #ffffff;
       font-size: 20px; }
-    .table-wrap .table-head .is-green {
+    .table-wrap .table-head .green {
       color: #91c532; }
-    .table-wrap .table-head :first-child {
-      margin-right: 10px; }
-    .table-wrap .table-head :last-child {
-      font-size: 11px;
-      color: #ffffff;
-      display: inline-flex;
-      align-items: center;
-      float: right; }
-      .table-wrap .table-head :last-child > i {
-        font-size: 12px;
-        position: relative;
-        top: -1px; }
   .table-wrap .tableimage img {
     max-width: 95px;
     max-height: 115px; }
