@@ -132,7 +132,7 @@
         				<li class="actives"><a href="index.html">Home</a></li>
         				<li><a href="#">about</a></li>
         				<li><a href="#">contact</a></li>
-                <li class="top"><a href="#">go to your top list</a></li>
+                <li class="top"><a href="/toplist.htlm">go to your top list</a></li>
         			  </ul>
 
         			  <!--<ul class="rightnavbar nav navbar-nav navbar-right">
@@ -174,15 +174,15 @@
 								<div class="table-wrap">
         				<div class="table-responsive tabletopmovies">
 									<div class="table-head">
-										<p class="prim_title">Top Raited Movies</p>
+										<p class="prim_title">Top Rated Movies</p>
 										<a href="" class="button-primary is-green facebook_share">Share on facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-										<p class="green">Your top 25</p>
+										<p class="green">Your top 20</p>
 									</div>
         					<table class="table">
         						<tr class="titletr">
         							<th>Rank</th>
         							<th>poster & title</th>
-        							<th class="vote"><i class="fa fa-long-arrow-up" aria-hidden="true"></i>vote percentage</th>
+        							<th class="vote">FliqScore</th>
         							<th class="">Global Rank</th>
         						</tr>
 								<!--{% for movs in movlist %} -->
@@ -193,7 +193,7 @@
         								<img ng-src="../static/posters/{{movs.Poster}}Table.jpg" class="img-responsive">
         								<span>{{movs.Title}}</span>
         							</td>
-        							<td><span class="percentage">{{movs.winpct}}%</span></td>
+        							<td><span class="percentage">{{movs.points}}</span></td>
         							<td>
         								<div class="startimage">
 													<span>4</span>

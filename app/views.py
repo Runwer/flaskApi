@@ -59,17 +59,24 @@ def create_task():
 @cross_origin()
 def toplist():
     session_user = request.args.get('username')
-    wins = winPct(session_user)
+    #wins = winPct(session_user)
     edges = findEdge(session_user)
     if len(edges) != 0:
         tlist = pagerank(edges)[0]
         sortedtlist = sorted(tlist.items(), key=operator.itemgetter(1), reverse=True)
         outmovs = []
+        i = 1
         for movlis in sortedtlist:
             temp = findMov(movlis[0])
-            temp["points"] = ("%.2f" % movlis[1])
-            temp["winpct"] = round(((float(wins[temp['id']]['wins'])/(wins[temp['id']]['wins']+wins[temp['id']]['los']))*100),1)
+            if i == 1:
+                toppoints = float(movlis[1])
+            temp["points"] = ("%.0f" % (float(movlis[1])*100/toppoints))
+
+            #temp["winpct"] = round(((float(wins[temp['id']]['wins'])/(wins[temp['id']]['wins']+wins[temp['id']]['los']))*100),1)
             outmovs.append(temp)
+            if i == 20:
+                break
+            i += 1
 
         return jsonify(outmovs)
     else: return jsonify({})
