@@ -722,6 +722,21 @@ footer {
       font-size: 20px; }
     .table-wrap .table-head .green {
       color: #91c532; }
+    .table-wrap .table-head .facebook_share {
+      position: fixed;
+      top: 414px;
+      right: calc((100% - 1170px)/2);
+      transform: rotate(90deg);
+      transform-origin: right top;
+      background: #4267b2;
+      border-radius: 3px;
+      transition: all 0.3s ease; }
+      .table-wrap .table-head .facebook_share:hover {
+        background: #365899 !important; }
+      @media (max-width: 1199px) {
+        .table-wrap .table-head .facebook_share {
+          position: static;
+          transform: none; } }
   .table-wrap .tableimage img {
     max-width: 95px;
     max-height: 115px; }
