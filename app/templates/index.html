@@ -181,33 +181,35 @@
             </div>
           </div>
           <div class="col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 hidden-sm hidden-xs">
-              {% if '{{moviectrl.oldMovieOne.Poster}}'|length >5 %}
-              <div class="smallmovieimage">
-                  <div class="smallone">
-                    <!-- Remember set star according to ng-if="moviectrl.picked == 'Mov2'" -->
-                    <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieOne.Poster}}' }}_small.jpg" alt="poster" class="img-responsive">
-                    <!-- <img ng-src="/static/posters/_small.jpg" class="img-responsive"> -->
-                  </div>
+                <!-- Remember set star according to ng-if="moviectrl.picked == 'Mov2'" -->
 
-                  <div class="ratings">
-                      <!-- <span class="roundpercent">{{ '{{moviectrl.pctMovieOne}}' }}%</span>
-                      <span class="ratinstext">rating<img src="../static/img/arrow.png" class="img-responsive"></span>
-                      <span class="roundpercent">{{ '{{moviectrl.pctMovieTwo}}' }}%</span> -->
-                      <span class="roundpercent">20%</span>
-                      <span class="ratinstext">rating<img src="../static/img/arrow.png" alt="arrow" class="img-responsive"></span>
-                      <span class="roundpercent">80%</span>
-                  </div>
 
-                  <div class="smallone">
-                      <!-- Remember set star according to ng-if="moviectrl.picked != 'Mov2'" -->
-                      <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg" alt="poster" class="img-responsive">
-                      <!-- <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg"  class="img-responsive"> -->
-                  </div>
+              <div ng-if="moviectrl.oldMovieOne.Poster">
+                  <div class="smallmovieimage">
+                      <div class="smallone">
 
+                        <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieOne.Poster}}' }}_small.jpg" alt="poster" class="img-responsive">
+                        <!-- <img ng-src="/static/posters/_small.jpg" class="img-responsive"> -->
+                      </div>
+
+                      <div class="ratings">
+                          <!-- <span class="roundpercent">{{ '{{moviectrl.pctMovieOne}}' }}%</span>
+                          <span class="ratinstext">rating<img src="../static/img/arrow.png" class="img-responsive"></span>
+                          <span class="roundpercent">{{ '{{moviectrl.pctMovieTwo}}' }}%</span> -->
+                          <span class="roundpercent">20%</span>
+                          <span class="ratinstext">rating<img src="../static/img/arrow.png" alt="arrow" class="img-responsive"></span>
+                          <span class="roundpercent">80%</span>
+                      </div>
+
+                      <div class="smallone">
+                          <!-- Remember set star according to ng-if="moviectrl.picked != 'Mov2'" -->
+                          <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg" alt="poster" class="img-responsive">
+                          <!-- <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg"  class="img-responsive"> -->
+                      </div>
+
+                  </div>
               </div>
-              {% else %}
 
-              {% endif %}
           </div>
         </div><!--end-->
 
