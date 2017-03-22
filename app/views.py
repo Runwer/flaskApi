@@ -21,6 +21,11 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 def index():
     return fp_cookie('/index.html', None)
 
+
+@app.route('/about.html')
+def about():
+    return fp_cookie('/about.html', None)
+
 @app.route('/toplist.html')
 def toplisthtml():
     if request.args.get('userid') != None:

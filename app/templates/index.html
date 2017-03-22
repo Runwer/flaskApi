@@ -102,7 +102,7 @@
         			<div class="maincollapse collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         			  <ul class="nav navbar-nav">
         				<li class="actives"><a href="index.html">Home</a></li>
-        				<li><a href="#">about</a></li>
+        				<li><a href="/about.html">about</a></li>
         				<li><a href="#">contact</a></li>
                 <li class="top"><a href="toplist.html">go to your top list</a></li>
         			  </ul>
@@ -131,7 +131,6 @@
 
 
     <section class="interstellerarea">
-
       <div class="container">
 
 
@@ -154,9 +153,9 @@
                 <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></i>
               </div>
 
-              <div class="versus-icon">
+              <div class="versus-icon col-lg-offset-1" >
                 <!-- <img src="http://www.ufc-mania.ru/img/versus-icon.png" /> -->
-                <img src="../static/img/ic_movie_white.svg" />
+                  <i class="fa fa-bolt fa-5x main-title" aria-hidden="true"></i>
               </div>
               <!--<div class="interstellerimage">
                 <img class="img-responsive" alt="interstellar" >
@@ -174,6 +173,7 @@
                           ng-src="/static/posters/{{ '{{moviectrl.movieTwo.Poster}}' }}.jpg" alt="poster">
               <div class="poster-title">{{ '{{ moviectrl.movieTwo.Title }}' }} ({{ '{{moviectrl.movieTwo.Year}}' }})
               </div>
+
               <div class="poster-info">
                 <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></i>
               </div>
@@ -211,6 +211,11 @@
                       </div>
 
                   </div>
+              </div>
+              <div ng-if="moviectrl.oldMovieOne.Poster === undefined" class="container">
+
+                <div class="col-lg-3 text-center"><h4 class="main-title">Which is the better of these 2? </h4> <h6>pick your favourite and start building your top list</h6></br></div>
+              </div>
               </div>
 
           </div>
