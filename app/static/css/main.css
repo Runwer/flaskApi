@@ -598,6 +598,10 @@ footer {
       justify-content: center;
       display: flex; } }
 
+.main-title {
+  color: white;
+  font-weight: 500; }
+
 .btn-wrapper {
   margin-bottom: 25px;
   display: flex;
