@@ -58,7 +58,7 @@ def moviedb():
 def create_task():
     if not request.json or not 'win' in request.json:
         abort(400)
-    newEdge = {"loose" : request.json['loose'], "win": request.json['win'], "uid": session['user']}
+    newEdge = {"loose" : request.json['loose'], "win": request.json['win'], "uid": request.headers.get('X-USER-ID')}
     insertEdge(newEdge)
     return ("success"), 201
 
@@ -96,7 +96,7 @@ def pctMovie():
 @app.route('/moviedb/api/v1.0/winpct', methods=['GET'])
 @cross_origin()
 def winpcts():
-    return jsonify(winPct(session['user']))
+    return jsonify(winPct(request.headers.get('X-USER-ID')))
 
 
 @app.after_request

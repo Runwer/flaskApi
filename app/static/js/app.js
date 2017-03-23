@@ -32,8 +32,18 @@
                 loose: moviectrl.movieOne.id
             }
         }
+        moviectrl.user_id = $cookies.get('user_id');
+        var req = {
+            method: 'POST',
+            url: $rootScope.apiuri + 'moviedb/api/v1.0/edge',
+            headers : {
+                'X-PINGOTHER': 'pingpong',
+                'X-USER-ID': moviectrl.user_id
+                },
+            data: data
+            };
 
-        $http.post($rootScope.apiuri + 'moviedb/api/v1.0/edge', data)
+        $http(req)
             .then(function (data, status, headers) {
                 //console.log(data);
             }, function errorCallback(response) {
