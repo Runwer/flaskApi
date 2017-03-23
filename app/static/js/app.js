@@ -81,7 +81,6 @@
     $http.defaults.withCredentials = true;
 
     service.newMovies = function (count){
-      console.log(service.user_id);
       var promise = $http({
       method: 'GET',
       withCredentials: true,
