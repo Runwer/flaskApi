@@ -1,9 +1,9 @@
 from pymongo import MongoClient
 from jsonencoder import JSONEncoder
 
-#uri = ('localhost')
-#client = MongoClient(uri)
-#db = client.moviesdb
+# uri = ('localhost')
+# client = MongoClient(uri)
+# db = client.moviesdb
 
 uri = 'mongodb://veres:3cnseq7p2s@ds155509.mlab.com:55509/fliqpick'
 client = MongoClient(uri,

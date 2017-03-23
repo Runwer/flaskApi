@@ -32,8 +32,18 @@
                 loose: moviectrl.movieOne.id
             }
         }
+        moviectrl.user_id = $cookies.get('user_id');
+        var req = {
+            method: 'POST',
+            url: $rootScope.apiuri + 'moviedb/api/v1.0/edge',
+            headers : {
+                'X-PINGOTHER': 'pingpong',
+                'X-USER-ID': moviectrl.user_id
+                },
+            data: data
+            };
 
-        $http.post($rootScope.apiuri + 'moviedb/api/v1.0/edge', data)
+        $http(req)
             .then(function (data, status, headers) {
                 //console.log(data);
             }, function errorCallback(response) {
@@ -70,19 +80,23 @@
 
 
   }
-  function MovieDataService ($http, $rootScope) {
+  function MovieDataService ($http, $rootScope, $cookies) {
     var service = this;
+    service.user_id = $cookies.get('user_id');
     //setting api URI
     //$rootScope.apiuri = "http://flask-env.3cnseq7p2s.us-west-2.elasticbeanstalk.com/";
     $rootScope.apiuri = "http://127.0.0.1:5000/";
     //List of movies
     var movieout = [];
+    $http.defaults.withCredentials = true;
 
     service.newMovies = function (count){
       var promise = $http({
       method: 'GET',
+      withCredentials: true,
       headers: {
-        'Access-Control-Allow-Origin': '*'
+        'X-PINGOTHER': 'pingpong',
+        'X-USER-ID': service.user_id
       },
       url: $rootScope.apiuri+"moviedb/api/v1.0/movies?count="+count
       }).then(function successCallback(response) {
@@ -96,10 +110,13 @@
     };
 
     service.pctMovies = function (id1, id2){
+      //service.user_id = $cookies.getObject('user_id');
       var promise = $http({
       method: 'GET',
+      withCredentials: true,
       headers: {
-        'Access-Control-Allow-Origin': '*'
+        'X-PINGOTHER': 'pingpong',
+        'X-USER-ID': service.user_id
       },
       url: $rootScope.apiuri+"moviedb/api/v1.0/moviepct?mov1="+id1+"&mov2="+id2
       }).then(function successCallback(response) {
