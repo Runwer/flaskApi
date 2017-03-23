@@ -1,4 +1,6 @@
-import random
+from pymongo import MongoClient
+import operator
+
 
 def pagerank(graph, damping=0.85, epsilon=1.0e-8):
     inlink_map = {}
@@ -39,7 +41,34 @@ def pagerank(graph, damping=0.85, epsilon=1.0e-8):
         ranks, new_ranks = new_ranks, ranks
         n_iterations += 1
 
-    return ranks, n_iterations
+    sorted_dict = sorted(ranks.items(), key=operator.itemgetter(1), reverse=True)
+    return sorted_dict, n_iterations
+
+
+def findEdge(db):
+    query = {}
+    edgesDict = db.edges.find(query)
+    edges = []
+    for e in edgesDict:
+        edges.append([str(e["loose"]), str(e["win"])])
+    return edges
+
+
+def handler(event, context):
+    uri = 'mongodb://veres:3cnseq7p2s@ds155509.mlab.com:55509/fliqpick'
+    client = MongoClient(uri,
+                         connectTimeoutMS=30000,
+                         socketTimeoutMS=None,
+                         socketKeepAlive=True)
+    db = client.get_default_database()
+    ranks = pagerank(findEdge(db))
+    print ranks
+
+    for rank in ranks[0]:
+        db.Globalranking.insert({"movieID": rank[0], "rank": rank[1]})
+
+
+#handler(None, None)
 
 #graph = [['1','2'], ['2','3'], ['5','1']]
 

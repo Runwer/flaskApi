@@ -13,8 +13,9 @@ import sys
 
 #Needs to set this in a template used by all frontend views
 
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
-#app.config['CORS_HEADERS'] = 'Content-Type'
+#cors = CORS(app, resources={r"/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/*": {"origins": ["http://www.fliqpick.com", "http://flask-env.3cnseq7p2s.us-west-2.elasticbeanstalk.com", "http://127.0.0.1:5000"], "supports_credentials": True}})
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 @app.route('/index.html')
@@ -42,14 +43,15 @@ def toplisthtml():
 @cross_origin()
 def moviedb():
     moviecount = request.args.get('count', type=int)
+    user_id = request.headers.get('X-USER-ID')
     if moviecount == 1:
         #Consider doing a double call, then see if id of first == id of vsmovie
-        mov = getNotSeen(session['user'])
+        mov = getNotSeen(user_id)
         mov.append(request.args.get('vsmovie'))
-        notSeen(session['user'], request.args.get('dump'))
+        notSeen(user_id, request.args.get('dump'))
         return findMovBattleVs(mov)
     if moviecount == 2:
-        return findMovBattleRand(getNotSeen(session['user']))
+        return findMovBattleRand(getNotSeen(user_id))
 
 @app.route('/moviedb/api/v1.0/edge', methods=['POST'])
 @cross_origin()
@@ -95,3 +97,18 @@ def pctMovie():
 @cross_origin()
 def winpcts():
     return jsonify(winPct(session['user']))
+
+
+@app.after_request
+def add_cors(resp):
+    """ Ensure all responses have the CORS headers. This ensures any failures are also accessible
+        by the client. """
+    resp.headers['Access-Control-Allow-Origin'] = request.headers.get('Origin','*')
+    resp.headers['Access-Control-Allow-Credentials'] = 'true'
+    resp.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS, GET'
+    resp.headers['Access-Control-Allow-Headers'] = request.headers.get(
+        'Access-Control-Request-Headers', 'Authorization' )
+    # set low for debugging
+    if app.debug:
+        resp.headers['Access-Control-Max-Age'] = '10'
+    return resp
