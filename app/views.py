@@ -27,6 +27,12 @@ def index():
 def about():
     return fp_cookie('/about.html', None)
 
+
+@app.route('/contact.html')
+def contact():
+    return fp_cookie('/contact.html', None)
+
+
 @app.route('/toplist.html')
 def toplisthtml():
     if request.args.get('userid') != None:
@@ -34,7 +40,6 @@ def toplisthtml():
     else:
         otherid = None
         print('No username from GET!', file=sys.stderr)
-    print(otherid, file=sys.stderr)
     return fp_cookie_top('/toplist.html', otherid)
 
 #Get movies for Versus

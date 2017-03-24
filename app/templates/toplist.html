@@ -25,7 +25,7 @@
   	<meta property="og:type"          content="movie website" />
   	<meta property="og:title"         content="Fliqpick | Inteligent Movie Lists" />
   	<meta property="og:description"   content="With Fliqpick your personalized movie tolist and recommendation is an art of science" />
-  	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+  	<meta property="og:image"         content="../static/img/logo.png" />
     <meta name="description" content="Responsive website">
     <meta name="keywords" content="Movies">
     <meta name="author" content="Fliqpick">
@@ -98,9 +98,9 @@
     -->
         <!--end-->
 
-				<div class="headerlogoarea">
+<div class="headerlogoarea">
         	<div class="container">
-						<div class="row">
+            <div class="row">
         			<div class="col-sm-12 col-md-12 col-xs-12">
                 <nav class="mainavigation navbar navbar-default">
         		  <div class=" maincontainer">
@@ -127,24 +127,23 @@
         			<div class="maincollapse collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         			  <ul class="nav navbar-nav">
         				<li class="actives"><a href="index.html">Home</a></li>
-        				<li><a href="about.html">about</a></li>
-        				<li><a href="#">contact</a></li>
-                <li class="top"><a href="/toplist.htlm">go to your top list</a></li>
+        				<li><a href="/about.html">about</a></li>
+        				<li><a href="contact.html">contact</a></li>
+                <li class="top"><a href="toplist.html">go to your top list</a></li>
         			  </ul>
 
         			  <!--<ul class="rightnavbar nav navbar-nav navbar-right">
         				<li><a href="toplist.html">go to your top list</a></li>
-
               </ul> -->
         			</div><!-- /.navbar-collapse -->
               <div class="social-head">
-              <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-              <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+              <!--<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>-->
+              <a href="https://www.facebook.com/fliqpick/"><i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
               </div>
         		  </div><!-- /.container-fluid -->
         		</nav>
-        			</div>
-							</div>
+        		</div>
+              </div>
         				<!--<div class="socialicon">
         					<ul>
         						<li><a href=""><img src="../static/img/fb.png" class="img-responsive" alt="fb"></a></li>
@@ -194,7 +193,7 @@
         							<td><span class="percentage">{{movs.points}}</span></td>
         							<td>
         								<div class="startimage">
-													<span>4</span>
+													<span>{{ ranking[movs.id][0] }}+", "{{ ranking[movs.id][1] }}</span>
         									<img src="../static/img/star.png" class="img-responsive">
         								</div>
         							</td>

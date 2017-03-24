@@ -4,6 +4,7 @@ from flask import request, render_template, make_response, session
 import requests
 import uuid
 import json
+from dbDriver import findGlobalScore
 
 import sys
 
@@ -42,6 +43,7 @@ def fp_cookie(html, otherid):
 def fp_cookie_top(html, otherid):
     uri = "http://127.0.0.1:5000/moviedb/api/v1.0/toplist?username="
     #uri = "http://127.0.0.1/moviedb/api/v1.0/toplist?username="
+    ranking = findGlobalScore()
     if otherid != None:
         try:
             uri += str(otherid)
@@ -51,15 +53,15 @@ def fp_cookie_top(html, otherid):
         Jresponse = uResponse.text
         data = json.loads(Jresponse)
         if 'user' in session:
-            return render_template(html, userid = otherid, movlist = data)
+            return render_template(html, userid = otherid, movlist = data, ranking = ranking)
         else:
             if request.cookies.get('user_id'):
                 uid = request.cookies.get('user_id')
                 session['user'] = uid
-                return render_template(html, userid = otherid, movlist = data)
+                return render_template(html, userid = otherid, movlist = data, ranking = ranking)
             else:
                 uid = str(uuid.uuid1())
-                resp = make_response(render_template(html, otherid, movlist = data))
+                resp = make_response(render_template(html, userid =otherid, movlist = data, ranking = ranking))
                 resp.set_cookie('user_id', uid, max_age=3110400000)
                 session['user'] = uid
                 return (resp)
@@ -72,7 +74,7 @@ def fp_cookie_top(html, otherid):
                 return "Connection Error"
             Jresponse = uResponse.text
             data = json.loads(Jresponse)
-            return render_template(html, userid = str(session['user']), movlist = data)
+            return render_template(html, userid = str(session['user']), movlist = data, ranking = ranking)
         else:
             if request.cookies.get('user_id'):
                 uid = request.cookies.get('user_id')
@@ -84,7 +86,7 @@ def fp_cookie_top(html, otherid):
                     return "Connection Error"
                 Jresponse = uResponse.text
                 data = json.loads(Jresponse)
-                return render_template(html, userid = str(session['user']), movlist = data)
+                return render_template(html, userid = str(session['user']), movlist = data, ranking = ranking)
             else:
                 uid = str(uuid.uuid1())
                 resp = make_response(render_template(html))

@@ -47,6 +47,7 @@ def findEdge(uid):
         edges.append([str(e["loose"]), str(e["win"])])
     return edges
 
+
 def pctEdge(movid1, movid2):
     query = {"win":str(movid1), "loose": str(movid2)}
     w1 = db.edges.find(query).count()
@@ -91,6 +92,16 @@ def getNotSeen(uid):
     outq = db.notSeenCol.find(query, projection)
     outlist = [q["movieID"] for q in outq]
     return outlist
+
+def findGlobalScore():
+    movs = db.Globalranking.find().sort([("_id",-1)]).limit(1)
+    ranklist = [m for m in movs]
+    outdictrank = {}
+    i = 1
+    for m in ranklist[0]['ranking']:
+        outdictrank[m[0]] = [m[1], i]
+        i += 1
+    return outdictrank
 
 
 
