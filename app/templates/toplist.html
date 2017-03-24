@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" class="no-js" ng-app='MovieAppList'>
+<html lang="en" class="no-js">
 <!--<![endif]-->
 
 <head>
@@ -57,10 +57,7 @@
     <link rel="stylesheet" href="../static/css/main.css">
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <script src="../static/js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="../static/js/angular.js"></script>
-    <script src="../static/js/applist.js"></script>
-    <script src="../static/js/angular-cookies.min.js"></script>
-	<script src="../static/js/angular-route.js"></script>
+
     <!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -169,7 +166,7 @@
 							</select>
 						</div>
 					</div>--><!--end-->
-        		<div class="row" ng-controller="MovieList">
+        		<div class="row">
         			<div class="col-xs-12 col-lg-10 col-lg-offset-1">
 								<div class="table-wrap">
         				<div class="table-responsive tabletopmovies">
@@ -191,7 +188,7 @@
         							<td>{{ loop.index }}</td>
 											<td class="tableimage">
 
-        								<img ng-src="../static/posters/{{movs.Poster}}Table.jpg" class="img-responsive">
+        								<img src="../static/posters/{{movs.Poster}}Table.jpg" class="img-responsive">
         								<span>{{movs.Title}}</span>
         							</td>
         							<td><span class="percentage">{{movs.points}}</span></td>

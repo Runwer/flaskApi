@@ -31,7 +31,6 @@ def about():
 def toplisthtml():
     if request.args.get('userid') != None:
         otherid = request.args.get('userid')
-        print('Hello world!'+otherid, file=sys.stderr)
     else:
         otherid = None
         print('No username from GET!', file=sys.stderr)
@@ -69,8 +68,8 @@ def toplist():
     #wins = winPct(session_user)
     edges = findEdge(session_user)
     if len(edges) != 0:
-        tlist = pagerank(edges)[0]
-        sortedtlist = sorted(tlist.items(), key=operator.itemgetter(1), reverse=True)
+        sortedtlist = pagerank(edges)[0]
+        #sortedtlist = sorted(tlist.items(), key=operator.itemgetter(1), reverse=True)
         outmovs = []
         i = 1
         for movlis in sortedtlist:

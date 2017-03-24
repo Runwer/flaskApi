@@ -1,8 +1,11 @@
+from __future__ import print_function # In python 2.7
 #!flask/bin/python
 from flask import request, render_template, make_response, session
 import requests
 import uuid
 import json
+
+import sys
 
 
 def fp_cookie(html, otherid):
