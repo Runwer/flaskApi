@@ -18,19 +18,21 @@
     moviectrl.oldMovieOne = "";
     moviectrl.oldMovieTwo = "";
 
-
     this.pickMovie = function (e) {
+
         moviectrl.picked = e.target.getAttribute('data-value');
         if (moviectrl.picked == "Mov1") {
             var data = {
                 win: moviectrl.movieOne.id,
                 loose: moviectrl.movieTwo.id
             };
+            ga('send', 'event', 'pickMovie', 'picknrOne', 'buttonInteraction');
         } else {
             var data = {
                 win: moviectrl.movieTwo.id,
                 loose: moviectrl.movieOne.id
             }
+            ga('send', 'event', 'pickMovie', 'picknrTwo', 'buttonInteraction');
         }
         moviectrl.user_id = $cookies.get('user_id');
         var req = {
@@ -69,12 +71,14 @@
     this.changeMovieOne = function (){
       MovieDataService.newMovies("1&vsmovie="+moviectrl.movieTwo.id+"&dump="+moviectrl.movieOne.id).then(function(d){
         moviectrl.movieOne = d[0]
+        ga('send', 'event', 'notSeenMovie', 'notSeenOne', 'buttonInteraction');
       });
     };
 
     this.changeMovieTwo = function (){
       MovieDataService.newMovies("1&vsmovie="+moviectrl.movieOne.id+"&dump="+moviectrl.movieTwo.id).then(function(d){
         moviectrl.movieTwo = d[0]
+        ga('send', 'event', 'notSeenMovie', 'notSeenTwo', 'buttonInteraction');
       });
     }
 
