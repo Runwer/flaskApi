@@ -138,7 +138,7 @@
         			</div><!-- /.navbar-collapse -->
               <div class="social-head">
               <!--<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>-->
-              <a href="https://www.facebook.com/fliqpick/" target="_blank"><i class="fa fa-facebook-square fa-4x" onclick="ga('send', 'event', 'facebookLink', 'bigToplist', 'facebookPageLink');" aria-hidden="true"></i></a>
+              <a href="https://www.facebook.com/fliqpick/" target="_blank" onclick="ga('send', 'event', {eventCategory:'facebookLink', eventAction:'fbPageToplistBig', eventLabel:'facebookPageLink', transport: 'beacon'});"><i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
               </div>
         		  </div><!-- /.container-fluid -->
         		</nav>
@@ -171,8 +171,8 @@
         				<div class="table-responsive tabletopmovies">
 									<div class="table-head">
 										<p class="prim_title">Top Rated Movies</p>
-										<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.fliqpick.com/toplist.html?userid={{userid}}" target="_blank" class="button-primary is-green">Share on facebook <i class="fa fa-facebook-square" aria-hidden="true" onclick="ga('send', 'event', {eventCategory:'facebookLink', eventAction:'sharebuttonToplistTop', eventLabel:'facebookShareLink', transport: 'beacon'});"></i></a>
-                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.fliqpick.com/toplist.html?userid={{userid}}" target="_blank" class="button-primary is-green facebook_share">Share on facebook <i class="fa fa-facebook-square" aria-hidden="true" onclick="ga('send', 'event', 'facebookLink', 'sharebuttonToplistSide', 'facebookShareLink');"></i></a>
+										<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.fliqpick.com/toplist.html?userid={{userid}}" target="_blank" class="button-primary is-green" onclick="ga('send', 'event', {eventCategory:'facebookLink', eventAction:'sharebuttonToplistTop', eventLabel:'facebookShareLink', transport: 'beacon'});">Share on facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.fliqpick.com/toplist.html?userid={{userid}}" target="_blank" class="button-primary is-green facebook_share" onclick="ga('send', 'event', {eventCategory:'facebookLink', eventAction:'sharebuttonToplisSide', eventLabel:'facebookShareLink', transport: 'beacon'});">Share on facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 										<p class="green">Your top 20</p>
 									</div>
         					<table class="table">
