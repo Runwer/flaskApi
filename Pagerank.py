@@ -58,7 +58,7 @@ def findEdge(db):
 
 def handler(event, context):
     current_folder = os.path.dirname(os.path.abspath(__file__))
-    with open(os.path.join(current_folder, 'mlab.json')) as data_file:
+    with open(os.path.join(current_folder, 'app', 'mlab.json')) as data_file:
         mlab = json.load(data_file)
 
     uri = "mongodb://{0}:{1}@ds143050-a0.mlab.com:43050,ds143050-a1.mlab.com:43050/fliqpick?replicaSet=rs-ds143050".format(
