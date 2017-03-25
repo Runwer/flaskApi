@@ -1,5 +1,7 @@
 from pymongo import MongoClient
 import operator
+import os
+import json
 
 
 def pagerank(graph, damping=0.85, epsilon=1.0e-8):
@@ -55,7 +57,12 @@ def findEdge(db):
 
 
 def handler(event, context):
-    uri = 'mongodb://veres:3cnseq7p2s@ds155509.mlab.com:55509/fliqpick'
+    current_folder = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(current_folder, 'mlab.json')) as data_file:
+        mlab = json.load(data_file)
+
+    uri = "mongodb://{0}:{1}@ds143050-a0.mlab.com:43050,ds143050-a1.mlab.com:43050/fliqpick?replicaSet=rs-ds143050".format(
+        mlab["username"], mlab["password"])
     client = MongoClient(uri,
                          connectTimeoutMS=30000,
                          socketTimeoutMS=None,
