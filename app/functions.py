@@ -10,7 +10,7 @@ import sys
 
 
 def fp_cookie(html, otherid):
-    if otherid != None:
+    if otherid is not None:
         if 'user' in session:
             return render_template(html, userid = otherid)
         else:
@@ -20,10 +20,10 @@ def fp_cookie(html, otherid):
                 return render_template(html, userid = otherid)
             else:
                 uid = str(uuid.uuid1())
-                resp = make_response(render_template(html, otherid))
+                resp = make_response(render_template(html, userid = otherid))
                 resp.set_cookie('user_id', uid, max_age=3110400000)
                 session['user'] = uid
-                return (resp)
+                return resp
     else:
         if 'user' in session:
             return render_template(html, userid = str(session['user']))
@@ -37,7 +37,7 @@ def fp_cookie(html, otherid):
                 resp = make_response(render_template(html))
                 resp.set_cookie('user_id', uid, max_age=3110400000)
                 session['user'] = uid
-                return (resp)
+                return resp
 
 
 def fp_cookie_top(html, otherid):
@@ -64,7 +64,7 @@ def fp_cookie_top(html, otherid):
                 resp = make_response(render_template(html, userid =otherid, movlist = data, ranking = ranking))
                 resp.set_cookie('user_id', uid, max_age=3110400000)
                 session['user'] = uid
-                return (resp)
+                return resp
     else:
         if 'user' in session:
             try:
@@ -92,4 +92,4 @@ def fp_cookie_top(html, otherid):
                 resp = make_response(render_template(html))
                 resp.set_cookie('user_id', uid, max_age=3110400000)
                 session['user'] = uid
-                return (resp)
+                return resp
