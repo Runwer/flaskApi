@@ -193,7 +193,11 @@
         							<td><span class="percentage">{{movs.points}}</span></td>
         							<td>
         								<div class="startimage">
-													<span>{{ ranking[movs.id][1] }}</span>
+                                            {% if movs.id in ranking %}
+                                             <span>{{ ranking[movs.id][1] }}</span>
+                                        {% else %}
+                                              <span>Not Ranked</span>
+                                        {%endif %}
         									<img src="../static/img/star.png" class="img-responsive">
         								</div>
         							</td>
