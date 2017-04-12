@@ -2,6 +2,8 @@ from pymongo import MongoClient
 from jsonencoder import JSONEncoder
 import json
 import os
+import collections
+import operator
 
 
 # uri = ('localhost')
@@ -39,9 +41,8 @@ def findMovBattleVs(vs):
 
 def findMov(id):
     query = {"id":id}
-    projection = {"_id": 0, "Title": 1, "Poster": 1, "id": 1}
+    projection = {"_id": 0, "Title": 1, "Poster": 1, "id": 1, "Description": 1}
     return db.moviesCol.find_one(query, projection)
-
 
 ## functions that plays around with the Collection of edges
 def insertEdge(edge):
@@ -98,7 +99,7 @@ def getNotSeen(uid):
     query = {"uid": uid}
     projection = {"_id": 0, "movieID": 1}
     outq = db.notSeenCol.find(query, projection)
-    outlist = [q["movieID"] for q in outq]
+    outlist = list(set([q["movieID"] for q in outq]))
     return outlist
 
 def findGlobalScore():
@@ -111,8 +112,23 @@ def findGlobalScore():
         i += 1
     return outdictrank
 
+def notSeenList(uid):
+    notseen = getNotSeen(uid)
+    globalscore = findGlobalScore()
+    recviews = {}
+    for n in notseen:
+        try:
+            recviews[n] = globalscore[n]
+        except:
+            recviews[n] = [0, 'Not Rated']
+
+    sorted_recviews = sorted(recviews.items(), key=operator.itemgetter(1), reverse=True)
+    return sorted_recviews
+
+
 
 
 if __name__ == '__main__':
-    print winPct('2')
+    print notSeenList("a6c2d736-0f59-11e7-bb6a-0a0407b0c80f")
+
 

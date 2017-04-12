@@ -4,9 +4,10 @@ from app import app
 from flask import Flask, jsonify, request, abort, session
 from flask_cors import CORS, cross_origin
 from Pagerank import pagerank
-from functions import fp_cookie, fp_cookie_top
+from functions import fp_cookie, fp_cookie_top, fp_cookie_viewlist
 import operator
-from dbDriver import findMovBattleRand, findMovBattleVs, findMov, insertEdge, findEdge, pctEdge, notSeen, getNotSeen, winPct
+from dbDriver import findMovBattleRand, findMovBattleVs, findMov, insertEdge, findEdge, pctEdge, notSeen, getNotSeen, \
+    winPct, notSeenList
 import uuid
 import sys
 
@@ -41,6 +42,10 @@ def toplisthtml():
         otherid = None
         print('No username from GET!', file=sys.stderr)
     return fp_cookie_top('/toplist.html', otherid)
+
+@app.route('/viewlist.html')
+def viewlisthtml():
+    return fp_cookie_viewlist('/viewlist.html')
 
 #Get movies for Versus
 @app.route('/moviedb/api/v1.0/movies', methods=['GET'])
@@ -91,6 +96,21 @@ def toplist():
 
         return jsonify(outmovs)
     else: return jsonify({})
+
+@app.route('/moviedb/api/v1.0/viewlist', methods=['GET'])
+@cross_origin()
+def viewlist():
+    session_user = request.args.get('username')
+    outmovs = []
+    for movs in notSeenList(session_user):
+        temp = findMov(movs[0])
+        temp['Rank'] = movs[1][1]
+        outmovs.append(temp)
+
+    return jsonify(outmovs)
+
+
+
 
 @app.route('/moviedb/api/v1.0/moviepct', methods=['GET'])
 @cross_origin()

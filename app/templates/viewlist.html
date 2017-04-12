@@ -130,7 +130,7 @@
         				<li><a href="/about.html">about</a></li>
         				<li><a href="contact.html">contact</a></li>
                 <li class="top"><a href="toplist.html">go to your top list</a></li>
-                          <li><a href="viewlist.html">You Should Watch-list</a></li>
+                          <li class="actives"><a href="viewlist.html">You Should Watch-list</a></li>
         			  </ul>
 
         			  <!--<ul class="rightnavbar nav navbar-nav navbar-right">
@@ -171,31 +171,30 @@
 								<div class="table-wrap">
         				<div class="table-responsive tabletopmovies">
 									<div class="table-head">
-										<p class="prim_title">Top Rated Movies</p>
+										<p class="prim_title">You should REALLY watch these!</p>
 										<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.fliqpick.com/toplist.html?userid={{userid}}" target="_blank" class="button-primary is-green" onclick="ga('send', 'event', {eventCategory:'facebookLink', eventAction:'sharebuttonToplistTop', eventLabel:'facebookShareLink', transport: 'beacon'});">Share on facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
                                         <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.fliqpick.com/toplist.html?userid={{userid}}" target="_blank" class="button-primary is-green facebook_share" onclick="ga('send', 'event', {eventCategory:'facebookLink', eventAction:'sharebuttonToplisSide', eventLabel:'facebookShareLink', transport: 'beacon'});">Share on facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 										<p class="green">Your top 20</p>
 									</div>
         					<table class="table">
         						<tr class="titletr">
-        							<th>Rank</th>
+        							<th>#</th>
         							<th>poster & title</th>
-        							<th class="vote">FliqScore</th>
+        							<th class="vote">Description</th>
         							<th class="">Global Rank</th>
         						</tr>
 								<!--{% for movs in movlist %} -->
         						<tr class="tablerowtow">
         							<td>{{ loop.index }}</td>
 											<td class="tableimage">
-
         								<img src="../static/posters/{{movs.Poster}}Table.jpg" class="img-responsive">
         								<span>{{movs.Title}}</span>
         							</td>
-        							<td><span class="percentage">{{movs.points}}</span></td>
+        							<td><span class="percentage">{{movs.Description}}</span></td>
         							<td>
         								<div class="startimage">
                                             {% if movs.id in ranking %}
-                                             <span>{{ ranking[movs.id][1] }}</span>
+                                             <span>{{ movs.Rank }}</span>
                                         {% else %}
                                               <span>Not Ranked</span>
                                         {%endif %}
