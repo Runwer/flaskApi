@@ -25,7 +25,7 @@ db = client.get_default_database()
 ## functions that mess with moviesCol
 def findMovBattleRand(notlist):
     query = [{"$match":
-        {"id": {"$nin": notlist}} },
+        {"id": {"$nin": notlist}, "Country": {"$ne": "India"}, "Year": {"$gt": 1960}}},
              {"$sample": {"size": 2}}]
     projection = [{"_id": 0, "Title": 1, "Poster": 1, "id":1}]  # 0 kommer ikke med, 1 kommer med
     movs = db.moviesCol.aggregate(query)
@@ -33,7 +33,7 @@ def findMovBattleRand(notlist):
 
 def findMovBattleVs(vs):
     query = [{"$match":
-        {"id": {"$nin": vs}} },
+        {"id": {"$nin": vs}, "Country": {"$ne": "India"}, "Year": {"$gt": 1960}}},
     {"$sample": {"size": 1}}]
     projection = [{"_id": 0, "Title": 1, "Poster": 1, "id":1}]  # 0 kommer ikke med, 1 kommer med
     movs = db.moviesCol.aggregate(query)
@@ -41,7 +41,7 @@ def findMovBattleVs(vs):
 
 def findMov(id):
     query = {"id":id}
-    projection = {"_id": 0, "Title": 1, "Poster": 1, "id": 1, "Description": 1}
+    projection = {"_id": 0, "Title": 1, "Poster": 1, "id": 1, "Description": 1, "Year": 1, "Genre": 1}
     return db.moviesCol.find_one(query, projection)
 
 ## functions that plays around with the Collection of edges

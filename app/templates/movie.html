@@ -140,19 +140,18 @@
         <!-- <h4> <a href=""><img src="../static/img/infoimage.png" class="hidden-lg hidden-md" data-toggle="tooltip" title="' }}"></a></h4> -->
 
         <div class="row">
-          <div class="col-md-5 col-lg-4 col-sm-6 col-xs-5">
-            <div class="btn-wrapper">
-              <button class="button-primary is-green" ng-click="moviectrl.pickMovie($event)" data-value="Mov1">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></button>
-              <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
-            </div>
-            <div class="posterimage">
-              <img ng-click="moviectrl.pickMovie($event)" data-value="Mov1"
-                              ng-src="/static/posters/{{ '{{ moviectrl.movieOne.Poster}}' }}.jpg" alt="poster">
-              <div class="poster-title">{{ '{{ moviectrl.movieOne.Title}}' }} ({{ '{{moviectrl.movieOne.Year}}' }})</div>
+          <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
 
-              <!--<div class="poster-info">
-                <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieOne.Description}}' }}"></i>
-              </div>-->
+            <div class="posterimage">
+                <div class="main-title"><h4>{{ movdata.Title }} ({{ movdata.Year }})</h4></div>
+                <p></p>
+                <div class="btn-wrapper">
+                <button class="button-primary is-green" ng-click="moviectrl.pickMovie($event)" data-value="Mov1">Rate Movie<i class="fa fa-heart" aria-hidden="true"></i></button>
+                <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieOne()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
+                </div>
+                <img data-value="Poster" src="/static/posters/{{ movdata.Poster }}.jpg" alt="poster">
+
+
 
               <div class="versus-icon col-lg-offset-1" >
                 <!-- <img src="http://www.ufc-mania.ru/img/versus-icon.png" /> -->
@@ -164,60 +163,13 @@
             </div>
           </div>
 
-          <div class="col-md-5 col-lg-4 col-lg-offset-1  col-sm-6 col-xs-5">
-            <div class="btn-wrapper">
-              <button class="button-primary is-green" ng-click="moviectrl.pickMovie($event)" data-value="Mov2">Pick Movie<i class="fa fa-heart" aria-hidden="true"></i></button>
-              <button class="button-primary is-yellow" ng-click="moviectrl.changeMovieTwo()">Not Seen This Movie<i class="fa fa-frown-o" aria-hidden="true"></i></button>
-            </div>
-            <div class="posterimage">
-              <img ng-click="moviectrl.pickMovie($event)" data-value="Mov2"
-                          ng-src="/static/posters/{{ '{{moviectrl.movieTwo.Poster}}' }}.jpg" alt="poster">
-              <div class="poster-title">{{ '{{ moviectrl.movieTwo.Title }}' }} ({{ '{{moviectrl.movieTwo.Year}}' }})
-              </div>
+          <div class="col-md-8 col-lg-8 col-sm-6 col-xs-12">
+              <div class="table-wrap"><span>Your </span><img src="../static/img/logosmall.png" class="img-responsive"> Score    </div>
+            <p></p>
+              <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://www.youtube.com/embed/XHjIqQBsPjk' frameborder='0' allowfullscreen></iframe></div>
 
-              <!--<div class="poster-info">
-                <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="{{ '{{moviectrl.movieTwo.Description}}' }}"></i>
-              </div>
-              <div class="bladeimage">
-                <img class="img-responsive" alt="bladeimage" ng-click="moviectrl.pickMovie($event)" data-value="Mov2"
-                          ng-src="/static/posters/' }}.jpg">
-              </div>-->
-            </div>
           </div>
-          <div class="col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 hidden-sm hidden-xs">
-                <!-- Remember set star according to ng-if="moviectrl.picked == 'Mov2'" -->
 
-
-              <div ng-if="moviectrl.oldMovieOne.Poster">
-                  <div class="smallmovieimage">
-                      <div class="smallone">
-
-                        <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieOne.Poster}}' }}_small.jpg" alt="poster" class="img-responsive">
-                        <!-- <img ng-src="/static/posters/_small.jpg" class="img-responsive"> -->
-                      </div>
-
-                      <div class="ratings">
-                          <!-- <span class="roundpercent">%</span>
-                          <span class="ratinstext">rating<img src="../static/img/arrow.png" class="img-responsive"></span>
-                          <span class="roundpercent">%</span> -->
-                          <span class="roundpercent">{{ '{{moviectrl.pctMovieOne}}' }}%</span>
-                          <span class="ratinstext">wins</span>
-                          <span class="roundpercent">{{ '{{moviectrl.pctMovieTwo}}' }}%</span>
-                      </div>
-
-                      <div class="smallone">
-                          <!-- Remember set star according to ng-if="moviectrl.picked != 'Mov2'" -->
-                          <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg" alt="poster" class="img-responsive">
-                          <!-- <img ng-src="/static/posters/{{ '{{moviectrl.oldMovieTwo.Poster}}' }}_small.jpg"  class="img-responsive"> -->
-                      </div>
-
-                  </div>
-              </div>
-              <div ng-if="moviectrl.oldMovieOne.Poster === undefined" class="container">
-
-                <div class="col-lg-3 text-center"><h4 class="main-title">Which is the better of these 2? </h4> <h5>Pick your favourite and start building your top list.</h5><br><h5>Our algorithm starts doing magic right away, but the more you pick, the more precise it becomes.</h5></div>
-              </div>
-              </div>
 
           </div>
         </div><!--end-->

@@ -4,7 +4,7 @@ from app import app
 from flask import Flask, jsonify, request, abort, session
 from flask_cors import CORS, cross_origin
 from Pagerank import pagerank
-from functions import fp_cookie, fp_cookie_top, fp_cookie_viewlist
+from functions import fp_cookie, fp_cookie_top, fp_cookie_viewlist, fp_cookie_movie
 import operator
 from dbDriver import findMovBattleRand, findMovBattleVs, findMov, insertEdge, findEdge, pctEdge, notSeen, getNotSeen, \
     winPct, notSeenList
@@ -46,6 +46,11 @@ def toplisthtml():
 @app.route('/viewlist.html')
 def viewlisthtml():
     return fp_cookie_viewlist('/viewlist.html')
+
+@app.route('/movie.html')
+def moviehtml():
+    movid = request.args.get('movid')
+    return fp_cookie_movie('/movie.html', movid)
 
 #Get movies for Versus
 @app.route('/moviedb/api/v1.0/movies', methods=['GET'])

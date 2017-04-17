@@ -4,7 +4,7 @@ from flask import request, render_template, make_response, session
 import requests
 import uuid
 import json
-from dbDriver import findGlobalScore
+from dbDriver import findGlobalScore, findMov
 
 import sys
 
@@ -38,6 +38,22 @@ def fp_cookie(html, otherid):
                 resp.set_cookie('user_id', uid, max_age=3110400000)
                 session['user'] = uid
                 return resp
+
+def fp_cookie_movie(html, movid):
+    moviedata = findMov(movid)
+    if 'user' in session:
+        return render_template(html, userid=str(session['user']), movdata = moviedata)
+    else:
+        if request.cookies.get('user_id'):
+            uid = request.cookies.get('user_id')
+            session['user'] = uid
+            return render_template(html, userid=str(session['user']), movdata = moviedata)
+        else:
+            uid = str(uuid.uuid1())
+            resp = make_response(render_template(html, movdata = moviedata))
+            resp.set_cookie('user_id', uid, max_age=3110400000)
+            session['user'] = uid
+            return resp
 
 def fp_cookie_viewlist(html):
     uri = "http://127.0.0.1:5000/moviedb/api/v1.0/viewlist?username="
