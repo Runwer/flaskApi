@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 import operator
+import datetime
 import os
 import json
 
@@ -71,11 +72,9 @@ def handler(event, context):
     ranks = pagerank(findEdge(db))
     print ranks
 
-    for rank in ranks[0]:
-        db.Globalranking.insert({"movieID": rank[0], "rank": rank[1]})
+    db.Globalranking.insert({'ranking': ranks[0], 'time': datetime.datetime.now()})
 
 
-#handler(None, None)
 
 #graph = [['1','2'], ['2','3'], ['5','1']]
 
