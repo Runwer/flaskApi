@@ -57,7 +57,7 @@ def fp_cookie_movie(html, movid):
 
 def fp_cookie_viewlist(html):
     #uri = "http://127.0.0.1:5000/moviedb/api/v1.0/toplist?username="
-    uri = "http://127.0.0.1/moviedb/api/v1.0/toplist?username="
+    uri = "http://127.0.0.1/moviedb/api/v1.0/viewlist?username="
     ranking = findGlobalScore()
     if 'user' in session:
         try:
